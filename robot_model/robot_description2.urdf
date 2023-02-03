@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<robot name="slicer" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:property name="link_1_positionX" value="0.0"/>
+    <xacro:property name="link_1_positionY" value="0.0"/>
+    <xacro:property name="link_1_positionZ" value="0.0"/>
+    <xacro:property name="link_2_positionX" value="0.0"/>
+    <xacro:property name="link_2_positionY" value="0.0"/>
+    <xacro:property name="link_2_positionZ" value="0.0"/>    
+    <xacro:property name="link_3_positionX" value="0.0"/>
+    <xacro:property name="link_3_positionY" value="0.0"/>
+    <xacro:property name="link_3_positionZ" value="0.0"/> 
+    <xacro:property name="path" value="slicer/robot_model/meshes"/>       
+    
+    <link name="odom"/>    
+    
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://${path}/base_link.dae"/>
+            </geometry>
+            <origin xyz="0 0 0"/>
+        </visual>
+    </link>
+
+    <link name="link_1">
+        <visual>
+            <geometry>
+                <mesh filename="package://${path}/link1.dae"/>
+                </geometry>
+            <origin xyz="0 0 0"/>
+        </visual>
+    </link>
+
+    <link name="link_2">
+        <visual>
+            <geometry>
+                <mesh filename="package://${path}/link2.dae"/>
+                </geometry>
+            <origin xyz="0 0 0"/>
+        </visual>
+    </link>
+
+    <link name="link_3">
+        <visual>
+            <geometry>
+                <mesh filename="package://${path}/link3.dae"/>
+                </geometry>
+            <origin xyz="0 0 0"/>
+        </visual>
+    </link>
+    
+
+    <joint name="odom_base_joint" type="fixed">
+        <parent link="odom"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+    </joint>       
+
+        
+    <joint name="base_link1_joint" type="prismatic">
+        <parent link="base_link"/>
+        <child link="link_1"/>
+        <origin xyz="${link_1_positionX} ${link_1_positionY} ${link_1_positionZ}" rpy="0.0 0.0 0.0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="0.0" upper="2.5" effort="30" velocity="0.2"/>
+    </joint>       
+
+    <joint name="link1_link2_joint" type="prismatic">
+        <parent link="link_1"/>
+        <child link="link_2"/>
+        <origin xyz="${link_2_positionX} ${link_2_positionY} ${link_2_positionZ}" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.5" upper="0.0" effort="30" velocity="0.2"/>
+    </joint>       
+
+    <joint name="link2_link3_joint" type="prismatic">
+        <parent link="link_2"/>
+        <child link="link_3"/>
+        <origin xyz="${link_3_positionX} ${link_3_positionY} ${link_3_positionZ}" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2" upper="0.0" effort="30" velocity="0.2"/>
+    </joint>                   
+</robot>
