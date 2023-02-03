@@ -35,7 +35,7 @@ def generate_launch_description():
 
     # Configure the main node
     main_node = Node(package    = "slicer",
-                     executable = "slicer",
+                     executable = "slicer_cutter",
                      output     = "screen",
                      namespace  = None,
                      parameters = [config_file_path])
@@ -61,17 +61,17 @@ def generate_launch_description():
                      namespace  = None,
                      arguments  = ["-d", LaunchConfiguration("rvizconfig")])
     
-    '''visualization_node = Node(package = "slicer",
+    visualization_node = Node(package = "slicer",
                               executable = "slicer_visualizer",
                               output = "screen")
-'''
+
     ld.add_action(main_node)
     ld.add_action(model_arg)
     ld.add_action(robot_state_node)
     ld.add_action(rviz_arg)
     ld.add_action(rviz_node)
     ld.add_action(joy_node)
-    #ld.add_action(visualization_node)
+    ld.add_action(visualization_node)
 
 
     return ld

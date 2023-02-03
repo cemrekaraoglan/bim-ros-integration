@@ -5,7 +5,7 @@ from rclpy.node           import Node
 import tf_transformations as tf_trans
 from geometry_msgs.msg    import Vector3, Quaternion
 from tf2_ros              import TransformBroadcaster, TransformStamped
-
+from std_msgs.msg import String, Float32
 
 class RobotModel(Node):
 
@@ -18,6 +18,7 @@ class RobotModel(Node):
         self.joystick_sub = self.create_subscription(Joy, 'joy', self.get_JoystickInput, 10) #?
         self.fab_pub = self.create_publisher(String, '/fabrication_status/message', 10)
         self.fab_pub_dim = self.create_publisher(Float32, '/fabrication_status/dimension', 10)
+        self.fab_pub_dim.publish(self.dim_x)
         
         #self.tf_buffer = Buffer()
         #self.tf_listener = TransformListener(self.tf_buffer, self)
@@ -54,11 +55,11 @@ class RobotModel(Node):
         self.joint2_movement = 0.0
         self.joint3_movement = 0.0
         
-
+        
     def get_JoystickInput(self, msg):
 
         if msg.buttons[0] == 1:
-            
+        
             #joint 3 moves
             self.joint3_movement -= 0.05
             
@@ -85,6 +86,7 @@ class RobotModel(Node):
         self.broadcastTransformations()
 
     def broadcastTransformations(self):
+        
         self.time_now = self.get_clock().now().to_msg()
         self.jointstate.header.stamp = self.time_now
         self.jointstate.position = [float(self.joint1_movement), float(self.joint2_movement), float(self.joint3_movement)]

@@ -4,6 +4,7 @@ import rclpy
 import sys
 import numpy as np
 import random
+from std_msgs.msg import String, Float32
 
 class Gypsum(Node):
     def __init__(self, name):
@@ -46,9 +47,10 @@ class Gypsum(Node):
         
         self.message = String()
                     
-    def subscriber_callback(self):
+    def subscriber_callback(self, msg):
         
         self.message = msg.data
+        self.new_dim = 0.8
         
         if self.message == 'The cutting has started...':
             self.get_logger().info(f'I am alive {self.gypsum}')
@@ -65,8 +67,7 @@ class Gypsum(Node):
             self.gypsum.color.g = random.uniform(0.0, 0.5)
             self.gypsum.color.b = 1.0 - (self.gypsum.color.r + self.gypsum.color.g)
     
-            self.gypsum.scale.x = float(new_dims_splitted[0])
-            self.gypsum.scale.y = float(new_dims_splitted[1])
+            self.gypsum.scale.x = self.new_dim
 
             self.gypsum.action = Marker().ADD
         
@@ -78,10 +79,10 @@ class Gypsum(Node):
             self.gypsum.color.g = random.uniform(0.0, 0.5)
             self.gypsum.color.b = 1.0 - (self.gypsum.color.r + self.gypsum.color.g)
 
-            self.gypsum.scale.x = self.dim_x-float(new_dims_splitted[0])
-            self.gypsum.scale.y = self.dim_y-float(new_dims_splitted[1])
+            self.gypsum.scale.x = self.dim_x-float(self.new_dim)
+          
 
-            self.gypsum.pose.position.x = (new_dims_splitted[0])
+            self.gypsum.pose.position.x = (self.new_dim)
 
             self.gypsum.action = Marker().ADD
         
@@ -93,7 +94,7 @@ class Gypsum(Node):
 def main(args=None):
 
     rclpy.init(args=args)
-    obj = gypsum('Gypsum')
+    obj = Gypsum('slicer')
     
     try:
         rclpy.spin(obj)
