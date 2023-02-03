@@ -1,0 +1,10 @@
+slicer:
+  ros__parameters:
+    max_speed: 90.0
+    name: 'Slicer'
+    id: 0
+    
+    scale_factor_joint1 : 0.1
+    scale_factor_joint2 : 0.1
+    scale_factor_joint3 : 0.02
+   
