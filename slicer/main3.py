@@ -5,14 +5,16 @@ from rclpy.node           import Node
 import tf_transformations as tf_trans
 from geometry_msgs.msg    import Vector3, Quaternion
 from tf2_ros              import TransformBroadcaster, TransformStamped
-
+from std_msgs.msg import String, Float32
+from rclpy.timer import Timer
 
 class RobotModel(Node):
 
     def __init__(self, name):
+        
         super().__init__('slicer')
         
-        self.dim_x = 0.8
+        
         self.odom_broadcaster = TransformBroadcaster(self, 10)
         self.joint_state_pub = self.create_publisher(JointState, "joint_states", 10)
         self.joystick_sub = self.create_subscription(Joy, 'joy', self.get_JoystickInput, 10) #?
@@ -21,7 +23,6 @@ class RobotModel(Node):
         
         #self.tf_buffer = Buffer()
         #self.tf_listener = TransformListener(self.tf_buffer, self)
-        
         
         #home position
         self.x = 0.0
@@ -54,37 +55,69 @@ class RobotModel(Node):
         self.joint2_movement = 0.0
         self.joint3_movement = 0.0
         
-
+        self.trigger = False
+        
+        self.joint_goal = Float32()
+        self.joint_goal.data = 0.8
+        self.fab_pub_dim.publish(self.joint_goal)
+        
+        self.fab_pub_msg = String()
+        
+        self.fab_pub_msg.data = 'The cutting has not started yet'
+        self.fab_pub.publish(self.fab_pub_msg)
+        
+        self.get_logger().info(f"The cutting has not started yet")
+        
+        
     def get_JoystickInput(self, msg):
 
         if msg.buttons[0] == 1:
+            self.trigger = True
+        
+        if self.trigger == True:
+            self.fab_pub_msg.data = 'The cutting has started'
+            self.fab_pub.publish(self.fab_pub_msg)
+            self.get_logger().info('The cutting has started')
+        
+            self.timer = self.create_timer(1, self.timer_callback)
+        
+
+    def timer_callback(self):
+
+        while abs(self.joint1_movement - self.joint_goal.data) > 0.01:
+                
+            #joint 1 moves
+            self.joint1_movement += 0.1 
+                
+            if self.joint1_movement == self.joint_goal.data:
+                self.joint1_movement = self.joint_goal.data
+                #joint 3 moves
+                self.joint3_movement -= 0.05
             
-            #joint 3 moves
-            self.joint3_movement -= 0.05
+                if self.joint3_movement <= 0.0:
+                    self.joint3_movement = 0.0
             
-            if self.joint3_movement <= 0.0:
-                
-                self.joint3_movement = 0.0
-                
-                self.fab_pub.publish('The cutting has started...')
-               
-               #joint 1 moves
-                self.joint1_movement += 0.1 
-                
-                if self.joint1_movement == self.dim_x:
-                    
-                    self.joint2_movement += 0.1
-                    
                     #joint 2 moves
+                    self.joint2_movement += 0.1 
+                
                     if self.joint2_movement >= 1.3:
-                        
                         self.joint2_movement = 1.3
-                                               
-                        self.fab_pub.publish('Gypsumboard is cut')
+            
+        else:
+            self.trigger = False
+            self.fab_pub_msg.data ='Gypsumboard is cut'
+            self.fab_pub.publish(self.fab_pub_msg)
+            self.get_logger().info('Gypsumboard is cut')
+            
+            #rate.sleep()
+                
    
         self.broadcastTransformations()
+        
+        
 
     def broadcastTransformations(self):
+        
         self.time_now = self.get_clock().now().to_msg()
         self.jointstate.header.stamp = self.time_now
         self.jointstate.position = [float(self.joint1_movement), float(self.joint2_movement), float(self.joint3_movement)]
@@ -92,13 +125,14 @@ class RobotModel(Node):
         
         #try:
             #trans = tfBuffer.lookup_transform('link2_link3_joint','odom', rospy.Time())
+        
  
 def main(args=None):
 
     rclpy.init(args=args)
     obj = RobotModel('slicer')
     rclpy.spin(obj)
-    
+    obj.destroy_node()
     
 if __name__ == "__main__":
     main()

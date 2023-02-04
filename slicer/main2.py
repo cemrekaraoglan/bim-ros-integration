@@ -4,6 +4,7 @@ import rclpy
 import sys
 import numpy as np
 import random
+from std_msgs.msg import String, Float32
 
 class Gypsum(Node):
     def __init__(self, name):
@@ -11,8 +12,8 @@ class Gypsum(Node):
         super().__init__(name)
 
         self.gypsum_pub = self.create_publisher(MarkerArray, 'visualization_marker_array', 10)
-        self.sub = self.create_subscription(String, "/fabrication_status/message", self.subscriber_callback, 10)
-        self.sub_msg = self.create_subscription(Float32, '/fabrication_status/dimension', 10)
+        self.sub_msg = self.create_subscription(String, "/fabrication_status/message", self.message_callback, 10)
+        self.sub_dim = self.create_subscription(Float32, '/fabrication_status/dimension', self.dimension_callback, 10)
         
         self.array = MarkerArray()
         self.gypsum = Marker()
@@ -44,29 +45,35 @@ class Gypsum(Node):
         self.gypsum.color.g = random.uniform(0.0, 0.5)
         self.gypsum.color.b = 1.0 - (self.gypsum.color.r + self.gypsum.color.g)
         
-        self.message = String()
-                    
-    def subscriber_callback(self):
+        self.msg_str = String()
+        self.msg_dim = Float32()
         
-        self.message = msg.data
+    
+    def dimension_callback(self,msg):
+ 
+        self.msg_dim = float(msg.data)
         
-        if self.message == 'The cutting has started...':
-            self.get_logger().info(f'I am alive {self.gypsum}')
+    def message_callback(self, msg):
+        
+        self.msg_str = msg.data
+
+        if self.msg_str == 'The cutting has started':
+            self.get_logger().info(f'Hello1')
             self.gypsum.action = Marker().ADD
             self.array.markers.append(self.gypsum)
             self.gypsum_pub.publish(self.array)
             
         
-        if self.message == 'Gypsumboard is cut':
-            self.gypsum.action = Marker().REMOVE
-        
+        elif self.msg_str== 'Gypsumboard is cut':
+            self.gypsum.action = Marker().DELETE
+            
+            self.get_logger().info(f'Hello2')
             #piece 1
             self.gypsum.color.r = random.uniform(0.0, 0.5)
             self.gypsum.color.g = random.uniform(0.0, 0.5)
             self.gypsum.color.b = 1.0 - (self.gypsum.color.r + self.gypsum.color.g)
     
-            self.gypsum.scale.x = float(new_dims_splitted[0])
-            self.gypsum.scale.y = float(new_dims_splitted[1])
+            self.gypsum.scale.x = self.msg_dim
 
             self.gypsum.action = Marker().ADD
         
@@ -78,22 +85,24 @@ class Gypsum(Node):
             self.gypsum.color.g = random.uniform(0.0, 0.5)
             self.gypsum.color.b = 1.0 - (self.gypsum.color.r + self.gypsum.color.g)
 
-            self.gypsum.scale.x = self.dim_x-float(new_dims_splitted[0])
-            self.gypsum.scale.y = self.dim_y-float(new_dims_splitted[1])
+            self.gypsum.scale.x = self.dim_x-float(self.msg_dim)
+          
 
-            self.gypsum.pose.position.x = (new_dims_splitted[0])
+            self.gypsum.pose.position.x = (self.msg_dim)
 
             self.gypsum.action = Marker().ADD
         
             self.array.markers.append(self.gypsum)
 
             self.gypsum_pub.publish(self.array)
+            
+            self.get_logger().info(f'Hello3')
 
 
 def main(args=None):
 
     rclpy.init(args=args)
-    obj = gypsum('Gypsum')
+    obj = Gypsum('slicer')
     
     try:
         rclpy.spin(obj)
