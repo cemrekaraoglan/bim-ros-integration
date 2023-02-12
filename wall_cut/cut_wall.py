@@ -295,7 +295,7 @@ def create_ifcobject(vertices, faces):
         #shape.geometry.faces = face
         
      
-        #element = file.create_entity('IfcProduct', GlobalId=ifcopenshell.guid.new(), Name='Panel')
+        #element = file.create_entity('IfcBuildingElementProxy', GlobalId=ifcopenshell.guid.new(), Name='Panel')
 
         #element.Representation = file.createIfcProductDefinitionShape(Representations=[shape])
 
@@ -310,16 +310,11 @@ get_shapes(model)
 formed_cuts = form_cuts()
 panels = form_wall_panels(formed_cuts[0], formed_cuts[1], formed_cuts[2], formed_cuts[3])
 display.DisplayShape(panels)
-#explode_meshes(panels)
 
-#print(create_ifcobject(vertices, faces))
 dir_path = "objects2.stl"
 
 #Export the panel geometry in STL format
 print(panels)
-combined_mesh = mesh.Mesh(np.concatenate(panels))
-
-
 
 current_time = time.time()
 
