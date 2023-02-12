@@ -1,10 +1,11 @@
 from stl import mesh
 import numpy as np
-
+from typing import overload, NewType, Optional, Tuple
 import ifcopenshell.util.selector
 import ifcopenshell.geom
 import ifcopenshell
 import ifcopenshell.util.schema
+from typing import overload, NewType, Optional, Tuple
 from OCC.Core import Bnd
 from OCC.Core import BRepBndLib
 import OCC.Core.BRepAlgoAPI
@@ -12,7 +13,7 @@ from OCC.Core.BRepPrimAPI import BRepPrimAPI_MakeBox
 from OCC.Core.TopoDS import *
 from OCC.Display.SimpleGui import init_display
 from OCC.Core.gp import gp_Pnt, gp_Trsf, gp_Vec, gp_GTrsf
-from OCC.Core.StlAPI import StlAPI_Writer
+from OCC.Core.StlAPI import *
 from OCC.Core.BRep import *
 from OCC.Core.TopExp import *
 from OCC.Core.TopAbs import *
@@ -20,7 +21,12 @@ from OCC.Core.BRepBuilderAPI import *
 from OCC.Core.TopLoc import TopLoc_Location
 from OCC.Display.OCCViewer import rgb_color
 from OCC.Core.Quantity import Quantity_Color
+from OCC.Core.BRepMesh import BRepMesh_IncrementalMesh
+import os
+import time
+from scipy.spatial import ConvexHull
 
+Standard_Real = NewType('Standard_Real', float)
 
 display, start_display, add_menu, add_function_to_menu = init_display("wx")
 
@@ -237,104 +243,98 @@ def form_wall_panels(wall_shapes, wall_width, indices, min_Y):
     return panels
 
 
+def explode_mesh(panels):
 
-def create_ifc_object_from_compound(compound, file):
+    meshes =[]
+    pts_grouped = []
+    pts = []
+    mesh_grouped_new = []
+    pline = []
+    other = []
+    extrusion_height = []
 
-    settings = file.get_header().get_file_schema()
+    for ind, panel in enumerate(panels):
+        stl_writer = StlAPI_Writer()
+        stl_writer.SetASCIIMode(True)
+        stl_writer.Write(panel, f"object{ind}.stl")
+        time.sleep(1)
+        meshes.append(mesh.Mesh.from_file(f"object{ind}.stl"))
 
-    # Translate the TopoDS_Compound into an Ifc representation
-    shape = ifcopenshell.util.selector.shape_to_ifc_obj(compound)
-    ifc_object = file.createIfcProduct(guid=ifcopenshell.guid.new(), owner=None, name=str(shape), 
-                                       description="")
-    # Add the Ifc representation to the IFC data model
-    ifc_object.Representation = file.createIfcProductDefinitionShape(Representations=[shape])
+    print(meshes)
 
-#-------------------------------------------------------------------------------------------------------------------
+    for m in meshes:
 
-vertices = []
-faces = []
+        vertices = m.points
 
-def explode_meshes(objects):
+        for point in vertices:
+            print(point)
+            for p in point:
+                pts.append(p)
+                
+        pts_grouped = [tuple(pts[i:i+3]) for i in range(0, len(pts), 3)]
+        mesh_grouped = [pts_grouped[i:i+36] for i in range(0, len(pts_grouped), 36)]
 
-    for obj in objects:
+        for msh in mesh_grouped:
+            for i, item1 in enumerate(msh):
+                for item2 in msh:
+                    if item1 == item2:
+                        msh.remove(item1)
+            mesh_grouped_new.append(msh)
 
-        vertex_explorer = TopExp_Explorer(obj, TopAbs_FACE)
-        print(obj)
 
-    while vertex_explorer.More():
-        
-        vertex = TopoDS_Face()
-        vertex = vertex_explorer.Current()
-        vertices.append(vertex)
-        print(vertex)
-    print(vertices)
-    #vertices_grouped = [vertices[i:i+8] for i in range(0, len(vertices), 8)]
+        for msh in mesh_grouped_new:
+            polyline_pts = []
+            other_pts = []
 
-    #print(vertices_grouped)
+            msh = sorted(msh, key=lambda x: (x[2], x[0], x[1]))
 
-    #for v in vertices_grouped:
-    #    p = BRepPrimAPI_MakeBox(v).Shape()
-    #    faces.append(p)
+            extrusion_height.append(msh[len(msh)-1][2])
+
+            for px in msh:
+
+                if px[2] == msh[0][2]:
+                    
+                    polyline_pts.append(px)
+
+                else: 
+                    other_pts.append(px)
+            
+            pline.append(polyline_pts)
+            other.append(other_pts)
+
+    return extrusion_height, pline
+
+
+
+def create_ifcobject(extrusion_heights, plines):
+
+    ifcfile = ifcopenshell.file()
+    settings = ifcopenshell.geom.settings()
     
+    wall_placement = create_ifclocalplacement(ifcfile, relative_to=storey_placement)
+    polyline = create_ifcpolyline(ifcfile, [(0.0, 0.0, 0.0), (5.0, 0.0, 0.0)])
+    axis_representation = ifcfile.createIfcShapeRepresentation(context, "Axis", "Curve2D", [polyline])
+
+
+
+
+
+
+
     return 
 
 
-
-def create_ifcobject(vertices, faces):
-    
-    elements = []
-
-    file = ifcopenshell.file()
-    settings = ifcopenshell.geom.settings()
-
-    for index, face in enumerate(faces):
-        print(face)
-        print(vertices[index])
-        
-        #shape = ifcopenshell.geom.create_shape(settings, vertex)
-        #shape.geometry.faces = face
-        
-     
-        #element = file.create_entity('IfcBuildingElementProxy', GlobalId=ifcopenshell.guid.new(), Name='Panel')
-
-        #element.Representation = file.createIfcProductDefinitionShape(Representations=[shape])
-
-        #elements.append(element)
-
-    #return elements
-
+#-------------------------------------------------------------------------------------------------------------------
 
 #Call the functions created above:
 
 get_shapes(model)
 formed_cuts = form_cuts()
 panels = form_wall_panels(formed_cuts[0], formed_cuts[1], formed_cuts[2], formed_cuts[3])
+create_ifcobject(explode_mesh(panels)[0], explode_mesh(panels)[1])
 display.DisplayShape(panels)
 
-dir_path = "objects2.stl"
 
-#Export the panel geometry in STL format
-print(panels)
-
-current_time = time.time()
-
-# Check if any files in the directory were modified within the last 5 seconds
-for filename in os.listdir(dir_path):
-    file_path = os.path.join(dir_path, filename)
-    modification_time = os.path.getmtime(file_path)
-
-    if modification_time > current_time - 5:
-        print(f"File '{filename}' was written within the last 5 seconds")
-        stl_writer = StlAPI_Writer()
-        stl_writer.SetASCIIMode(True)
-        stl_writer.Write(p,"objects2.stl")
-
-    else:
-        stl_writer.Write
-
-
-your_mesh = mesh.Mesh.from_file("objects2.stl")
-print(your_mesh)
 #create_ifc_object_from_compound(final_object, model)
 
 #model.write(export_path)
