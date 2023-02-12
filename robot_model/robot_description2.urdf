@@ -9,7 +9,7 @@
     <xacro:property name="link_2_positionZ" value="0.0"/>    
     <xacro:property name="link_3_positionX" value="0.0"/>
     <xacro:property name="link_3_positionY" value="0.0"/>
-    <xacro:property name="link_3_positionZ" value="0.15"/> 
+    <xacro:property name="link_3_positionZ" value="0.0"/> 
     <xacro:property name="path" value="slicer/robot_model/meshes"/>       
     
     <link name="odom"/>    

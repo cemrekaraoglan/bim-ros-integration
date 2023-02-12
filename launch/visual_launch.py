@@ -47,6 +47,12 @@ def generate_launch_description():
                             output     = "screen",
                             parameters = [{'robot_description': robot_description}])
 
+    # Configure the robot_state_publisher
+    joint_state_node = Node(package    = "joint_state_publisher",
+                            executable = "joint_state_publisher",
+                            name       = "joint_state_publisher",
+                            output     = "screen")
+
     # Configure the node for the joystick
     joy_node = Node(package    = "joy",
                     executable = "joy_node",
@@ -71,6 +77,7 @@ def generate_launch_description():
     ld.add_action(rviz_arg)
     ld.add_action(rviz_node)
     ld.add_action(joy_node)
+    #ld.add_action(joint_state_node)
     ld.add_action(visualization_node)
 
 

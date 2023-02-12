@@ -1,10 +1,10 @@
 slicer:
   ros__parameters:
-    max_speed: 90.0
+    max_speed: 1.0
     name: 'Slicer'
     id: 0
     
-    scale_factor_joint1 : 0.1
-    scale_factor_joint2 : 0.1
+    scale_factor_joint1 : 0.02
+    scale_factor_joint2 : 0.001
     scale_factor_joint3 : 0.02
    

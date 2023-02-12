@@ -7,7 +7,7 @@ package_name = 'slicer'
 
 setup(
     name=package_name,
-    version='0.0.0',
+    version='0.0.1',
     packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -22,14 +22,13 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='cemrekaraoglan',
-    maintainer_email='cemre.karaoglan@rwth-aachen.de',
-    description='A robot',
-    license='RWTH Aachen',
+    maintainer='beyzanurkaya',
+    maintainer_email='beyzanur.kaya@rwth-aachen.de',
+    description='Creates connection with IFC Model in server',
+    license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': ['slicer_cutter = slicer.main3:main', 'slicer_visualizer = slicer.main2:main', 'slicer = slicer.main:main'
-   
         ],
     },
 )

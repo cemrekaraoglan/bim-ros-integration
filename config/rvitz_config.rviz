@@ -5,8 +5,9 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /MarkerArray1
       Splitter Ratio: 0.5
-    Tree Height: 385
+    Tree Height: 236
   - Class: rviz_common/Views
     Expanded:
       - /Current View1
@@ -112,6 +113,18 @@ Visualization Manager:
                   {}
       Update Interval: 0
       Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: MarkerArray
+      Namespaces:
+        {}
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /visualization_marker_array
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -134,28 +147,68 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.3699606657028198
-        Y: 0.6915960907936096
-        Z: 0.6044601798057556
+        X: 1.6510069370269775
+        Y: 0.7781378030776978
+        Z: 0.3012791574001312
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7797967791557312
+      Pitch: 0.549796998500824
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.97999906539917
-    Saved: ~
+      Yaw: 5.694997310638428
+    Saved:
+      - Class: rviz_default_plugins/Orbit
+        Distance: 4.611434459686279
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Focal Point:
+          X: 1.6510069370269775
+          Y: 0.7781378030776978
+          Z: 0.3012791574001312
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: Orbit
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 0.549796998500824
+        Target Frame: <Fixed Frame>
+        Value: Orbit (rviz)
+        Yaw: 5.694997310638428
+      - Class: rviz_default_plugins/Orbit
+        Distance: 4.611434459686279
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Focal Point:
+          X: 1.6510069370269775
+          Y: 0.7781378030776978
+          Z: 0.3012791574001312
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: Orbit
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 0.549796998500824
+        Target Frame: <Fixed Frame>
+        Value: Orbit (rviz)
+        Yaw: 5.694997310638428
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 946
+  Height: 700
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000001cb00000358fc0200000002fb000000100044006900730070006c006100790073010000003d00000204000000c900fffffffb0000000a0056006900650077007301000002470000014e000000a400ffffff000005af0000035800000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000001cb00000262fc0200000002fb000000100044006900730070006c006100790073010000003d0000016f000000c900fffffffb0000000a0056006900650077007301000001b2000000ed000000a400ffffff000003cf0000026200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
-  Width: 1920
-  X: 0
-  Y: 27
+  Width: 1440
+  X: 783
+  Y: 142
