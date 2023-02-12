@@ -5,7 +5,6 @@ import ifcopenshell.util.selector
 import ifcopenshell.geom
 import ifcopenshell
 import ifcopenshell.util.schema
-from typing import overload, NewType, Optional, Tuple
 from OCC.Core import Bnd
 from OCC.Core import BRepBndLib
 import OCC.Core.BRepAlgoAPI
@@ -22,8 +21,6 @@ from OCC.Core.TopLoc import TopLoc_Location
 from OCC.Display.OCCViewer import rgb_color
 from OCC.Core.Quantity import Quantity_Color
 
-
-Standard_Real = NewType('Standard_Real', float)
 
 display, start_display, add_menu, add_function_to_menu = init_display("wx")
 
