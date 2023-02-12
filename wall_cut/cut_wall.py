@@ -5,6 +5,7 @@ import ifcopenshell.util.selector
 import ifcopenshell.geom
 import ifcopenshell
 import ifcopenshell.util.schema
+import ifcopenshell.util.element
 from typing import overload, NewType, Optional, Tuple
 from OCC.Core import Bnd
 from OCC.Core import BRepBndLib
@@ -25,6 +26,7 @@ from OCC.Core.BRepMesh import BRepMesh_IncrementalMesh
 import os
 import time
 from scipy.spatial import ConvexHull
+from ifc_export import create_ifc
 
 Standard_Real = NewType('Standard_Real', float)
 
@@ -286,7 +288,7 @@ def explode_mesh(panels):
             polyline_pts = []
             other_pts = []
 
-            msh = sorted(msh, key=lambda x: (x[2], x[0], x[1]))
+            msh = sorted(msh, key=lambda x: (x[2], x[0], x[1]), reverse=(True, False, False))
 
             extrusion_height.append(msh[len(msh)-1][2])
 
@@ -295,10 +297,12 @@ def explode_mesh(panels):
                 if px[2] == msh[0][2]:
                     
                     polyline_pts.append(px)
-
+                    
                 else: 
                     other_pts.append(px)
-            
+
+                polyline_pts.append(px[0])
+
             pline.append(polyline_pts)
             other.append(other_pts)
 
@@ -306,21 +310,10 @@ def explode_mesh(panels):
 
 
 
-def create_ifcobject(extrusion_heights, plines):
-
-    ifcfile = ifcopenshell.file()
-    settings = ifcopenshell.geom.settings()
-    
-    wall_placement = create_ifclocalplacement(ifcfile, relative_to=storey_placement)
-    polyline = create_ifcpolyline(ifcfile, [(0.0, 0.0, 0.0), (5.0, 0.0, 0.0)])
-    axis_representation = ifcfile.createIfcShapeRepresentation(context, "Axis", "Curve2D", [polyline])
-
-
-
-
-
-
-
+def create_ifcobject(ifcfile, extrusion_heights, plines):
+    # IFC template creation
+    for i, pline in enumerate(plines):
+        create_ifc(f'panel{i}', )
     return 
 
 
@@ -331,8 +324,9 @@ def create_ifcobject(extrusion_heights, plines):
 get_shapes(model)
 formed_cuts = form_cuts()
 panels = form_wall_panels(formed_cuts[0], formed_cuts[1], formed_cuts[2], formed_cuts[3])
-create_ifcobject(explode_mesh(panels)[0], explode_mesh(panels)[1])
+create_ifcobject(explode_mesh(model, panels)[0], explode_mesh(panels)[1])
 display.DisplayShape(panels)
+
 
 
 #create_ifc_object_from_compound(final_object, model)
