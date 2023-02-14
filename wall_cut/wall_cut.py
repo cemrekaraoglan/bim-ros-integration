@@ -20,10 +20,11 @@ from OCC.Core.TopAbs import *
 from OCC.Core.BRepBuilderAPI import *
 from OCC.Core.TopLoc import TopLoc_Location
 import time
-from ifc_export import create_ifc
+from ifcExport  import export_ifc_as_proxy
 from IFC2OWL import main
 import os
 from typing import overload, NewType, Optional, Tuple
+
 Standard_Real = NewType('Standard_Real', float)
 
 display, start_display, add_menu, add_function_to_menu = init_display("wx")
@@ -231,9 +232,9 @@ def explode_mesh(panels):
     pts_grouped = []
     pts = []
     mesh_grouped_new = []
-    pline = []
-    other = []
+    plines = []
     extrusion_height = []
+    corners = []
 
     #export meshes and reimport them to create IFC
     for ind, panel in enumerate(panels):
@@ -260,48 +261,59 @@ def explode_mesh(panels):
                 for item2 in msh:
                     if item1 == item2:
                         msh.remove(item1)
-            mesh_grouped_new.append(msh)
+            mesh_grouped_new.append(list(msh))
 
     #use the groups of points to create data needed for the IFC objects
     for msh in mesh_grouped_new:
 
         polyline_pts = []
-        other_pts = []
-        corners = []
         x_coord = []
+        y_coord = []
+        z_coord = []
 
-        msh = sorted(msh, key=lambda x: (-x[2], x[0], x[1]))
-        extrusion_height.append(msh[len(msh)-1][2])
+        msh = sorted(msh, key=lambda x: (x[2], -x[0], x[1]))
+
         corners.append(msh[0])
 
-        for msh_points in msh:
+        for ind, p in enumerate(msh):
+            
+            x_coord.append(p[0])
+            y_coord.append(p[1])
+            z_coord.append(p[2]) 
 
-            if msh_points[2] == msh[0][2]:
-                    
-                polyline_pts.append(msh_points)
-                    
-            else: 
-                other_pts.append(msh_points)
+        minX = Standard_Real(round(min(x_coord),2))
+        maxX = Standard_Real(round(max(x_coord),2))
+        minY = Standard_Real(round(min(y_coord),2))
+        maxY = Standard_Real(round(max(y_coord),2))
+        minZ = Standard_Real(round(min(z_coord),2))
+        maxZ = Standard_Real(round(max(z_coord),2))
+        
+        pt1 = (maxX, minY, minZ)
+        pt2 = (maxX, maxY, minZ)
+        pt3 = (minX, maxY, minZ)
+        pt4 = (minX, minY, minZ)
 
-            x_coord.append(msh_points[0])
+        polyline_pts = [pt1, pt2, pt3, pt4]
 
-        minX = min(x_coord)
-        maxX = max(x_coord)
-  
-        polyline_pts.append(polyline_pts[0])
-        pline.append(polyline_pts)
-        other.append(other_pts)
+        extrusion_height.append(maxZ - minZ)
 
-    return extrusion_height, pline, corners, maxX, minX
+        plines.append(polyline_pts)
+
+        return extrusion_height, plines, corners
 
 
-def create_ifcobject(extrusion_heights, plines, corners, maxX, minX):
+def create_ifcobject(extrusion_heights, plines, corners):
+
+    import_dir = f'{current_directory}/ifc_models/blank_ifc.ifc'
+    print(import_dir)
 
     for i, pline in enumerate(plines):
+
+        export_dir = f'{current_directory}/ifc_models/panel{i+1}.ifc'
+
+        export_ifc_as_proxy(import_dir, pline, extrusion_heights[i], corners[i], export_dir)
         
-        create_ifc(f'{current_directory}/ifc_models/panel{i}', corners, pline, extrusion_heights[i], maxX, minX,'None')
-    
-    print('IFC files are exported...')
+        print(f'IFC file {i} out of {len(plines)} is exported...')
 
     return 
 
@@ -322,7 +334,9 @@ explode_mesh(panels)
 
 print('Each panel is created from the meshes in the stl files...')
 
-create_ifcobject(explode_mesh(panels)[0], explode_mesh(panels)[1], explode_mesh(panels)[2], explode_mesh(panels)[3], explode_mesh(panels)[4])
+create_ifcobject(explode_mesh(panels)[0], explode_mesh(panels)[1], explode_mesh(panels)[2])
+
+print('Process is completed, objects are ready to be cut.')
 
 display.DisplayShape(panels)
 
@@ -330,7 +344,7 @@ display.FitAll()
 
 start_display()
 
-print('Process is completed, objects are ready to be cut.')
+
 
 
 
