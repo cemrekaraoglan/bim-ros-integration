@@ -1,0 +1,110 @@
+@prefix bot:   <https://w3id.org/bot#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix ifc:   <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#> .
+@prefix inst:  <http://w3id.org/ioc#> .
+@prefix lbd:   <https://linkebuildingdata.org/LBD#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix smls:  <https://w3id.org/def/smls-owl#> .
+@prefix unit:  <http://qudt.org/vocab/unit/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+inst:building_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2
+        rdf:type               bot:Building ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2 ;
+        geo:hasGeometry        []  ;
+        owl:sameAs             inst:IfcBuilding_101 .
+
+inst:site_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+        rdf:type                   bot:Site ;
+        props:globalIdIfcRoot      inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        props:nameIfcRoot          inst:nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        props:refElevationIfcSite  inst:refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        geo:hasGeometry            []  ;
+        owl:sameAs                 inst:IfcSite_107 ;
+        bot:hasBuilding            inst:building_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2 .
+
+inst:buildingelement_ec763b7b-c8f8-47ed-a7ed-77bfefd74381
+        rdf:type               bot:Element ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_ec763b7b-c8f8-47ed-a7ed-77bfefd74381 ;
+        props:nameIfcRoot      inst:nameIfcRoot_ec763b7b-c8f8-47ed-a7ed-77bfefd74381 ;
+        geo:hasGeometry        [ geo:asWKT  "MULTIPOINT Z((-1.52 -2.61 0.0), (-0.42 -2.51 2.11))" ;
+                                 <https://w3id.org/fog#asObj_v3.0-obj>
+                                         "diAtMC40MiAtMi42MSAwLjAKdiAtMC40MiAtMi42MSAyLjExCnYgLTEuNTIgLTIuNTEgMC4wCnYgLTEuNTIgLTIuNTEgMi4xMQp2IC0xLjUyIC0yLjUxIDAuMAp2IC0xLjUyIC0yLjUxIDIuMTEKdiAtMC40MiAtMi42MSAwLjAKdiAtMC40MiAtMi42MSAyLjExCmYgMiAxIDMKZiA0IDIgMwpmIDYgNSA3CmYgOCA2IDcK"^^<https://www.w3.org/TR/xmlschema-2/#base64Binary>
+                               ] ;
+        owl:sameAs             inst:IfcBuildingElementProxy_168 .
+
+<Optional[http://w3id.org/ioc#]property> {
+    inst:nameIfcRoot_ec763b7b-c8f8-47ed-a7ed-77bfefd74381
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_nameIfcRoot_ec763b7b-c8f8-47ed-a7ed-77bfefd74381_1676394388742 .
+    
+    inst:refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394388707 .
+    
+    inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394388712 .
+    
+    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2_1676394388717
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "3Sk_9SPbf3uhLES_BTzlEY" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:28.717745" .
+    
+    inst:globalIdIfcRoot_ec763b7b-c8f8-47ed-a7ed-77bfefd74381
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_globalIdIfcRoot_ec763b7b-c8f8-47ed-a7ed-77bfefd74381_1676394388743 .
+    
+    inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2_1676394388717 .
+    
+    inst:nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394388712 .
+    
+    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394388712
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "3Sk_9SPbf3uhLES_BTzlEX" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:28.712805" .
+    
+    inst:state_refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394388707
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "0."^^xsd:double ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:28.71038" .
+    
+    inst:state_nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394388712
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "Default" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:28.712558" .
+    
+    inst:state_globalIdIfcRoot_ec763b7b-c8f8-47ed-a7ed-77bfefd74381_1676394388743
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "3iTZjxoFX7xQVjTx$lrqE1" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:28.743179" .
+    
+    inst:state_nameIfcRoot_ec763b7b-c8f8-47ed-a7ed-77bfefd74381_1676394388742
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "Panel" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:28.742895" .
+}
+
+<Optional[http://w3id.org/ioc#]product> {
+    inst:buildingelement_ec763b7b-c8f8-47ed-a7ed-77bfefd74381
+            rdf:type  <https://pi.pauwel.be/voc/buildingelement#BuildingElement> .
+}

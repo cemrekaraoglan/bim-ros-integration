@@ -1,0 +1,110 @@
+@prefix bot:   <https://w3id.org/bot#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix ifc:   <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#> .
+@prefix inst:  <http://w3id.org/ioc#> .
+@prefix lbd:   <https://linkebuildingdata.org/LBD#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix smls:  <https://w3id.org/def/smls-owl#> .
+@prefix unit:  <http://qudt.org/vocab/unit/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+inst:building_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2
+        rdf:type               bot:Building ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2 ;
+        geo:hasGeometry        []  ;
+        owl:sameAs             inst:IfcBuilding_101 .
+
+inst:buildingelement_03f74529-ddd1-4592-8f72-27e80c555463
+        rdf:type               bot:Element ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_03f74529-ddd1-4592-8f72-27e80c555463 ;
+        props:nameIfcRoot      inst:nameIfcRoot_03f74529-ddd1-4592-8f72-27e80c555463 ;
+        geo:hasGeometry        [ geo:asWKT  "MULTIPOINT Z((-1.52 -2.71 6.63), (-0.42 -2.61 7.72))" ;
+                                 <https://w3id.org/fog#asObj_v3.0-obj>
+                                         "diAtMC40MiAtMi43MSA2LjYzCnYgLTAuNDIgLTIuNzEgNy43Mgp2IC0xLjUyIC0yLjYxIDYuNjMKdiAtMS41MiAtMi42MSA3LjcyCnYgLTEuNTIgLTIuNjEgNi42Mwp2IC0xLjUyIC0yLjYxIDcuNzIKdiAtMC40MiAtMi43MSA2LjYzCnYgLTAuNDIgLTIuNzEgNy43MgpmIDIgMSAzCmYgNCAyIDMKZiA2IDUgNwpmIDggNiA3Cg=="^^<https://www.w3.org/TR/xmlschema-2/#base64Binary>
+                               ] ;
+        owl:sameAs             inst:IfcBuildingElementProxy_168 .
+
+inst:site_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+        rdf:type                   bot:Site ;
+        props:globalIdIfcRoot      inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        props:nameIfcRoot          inst:nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        props:refElevationIfcSite  inst:refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        geo:hasGeometry            []  ;
+        owl:sameAs                 inst:IfcSite_107 ;
+        bot:hasBuilding            inst:building_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2 .
+
+<Optional[http://w3id.org/ioc#]property> {
+    inst:state_nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394431539
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "Default" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:07:11.539531" .
+    
+    inst:refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394431533 .
+    
+    inst:state_refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394431533
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "0."^^xsd:double ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:07:11.537068" .
+    
+    inst:nameIfcRoot_03f74529-ddd1-4592-8f72-27e80c555463
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_nameIfcRoot_03f74529-ddd1-4592-8f72-27e80c555463_1676394431572 .
+    
+    inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394431539 .
+    
+    inst:state_nameIfcRoot_03f74529-ddd1-4592-8f72-27e80c555463_1676394431572
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "Panel" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:07:11.572417" .
+    
+    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394431539
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "3Sk_9SPbf3uhLES_BTzlEX" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:07:11.539762" .
+    
+    inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2_1676394431544 .
+    
+    inst:globalIdIfcRoot_03f74529-ddd1-4592-8f72-27e80c555463
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_globalIdIfcRoot_03f74529-ddd1-4592-8f72-27e80c555463_1676394431572 .
+    
+    inst:nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394431539 .
+    
+    inst:state_globalIdIfcRoot_03f74529-ddd1-4592-8f72-27e80c555463_1676394431572
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "03zqKftT55aezo9_WCLLHZ" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:07:11.572634" .
+    
+    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2_1676394431544
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "3Sk_9SPbf3uhLES_BTzlEY" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:07:11.544741" .
+}
+
+<Optional[http://w3id.org/ioc#]product> {
+    inst:buildingelement_03f74529-ddd1-4592-8f72-27e80c555463
+            rdf:type  <https://pi.pauwel.be/voc/buildingelement#BuildingElement> .
+}

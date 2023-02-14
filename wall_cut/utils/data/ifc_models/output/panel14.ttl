@@ -1,0 +1,37 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix lbd: <https://linkebuildingdata.org/LBD#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix smls: <https://w3id.org/def/smls-owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix inst: <http://w3id.org/ioc#> .
+
+inst:buildingelement_e6426b32-5c6e-4476-9aca-4b9bd3ae4629
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_e6426b32-5c6e-4476-9aca-4b9bd3ae4629 ;
+        props:nameIfcRoot      inst:nameIfcRoot_e6426b32-5c6e-4476-9aca-4b9bd3ae4629 ;
+        rdf:type               bot:Element ;
+        geo:hasGeometry        _:b0 ;
+        owl:sameAs             inst:IfcBuildingElementProxy_168 .
+
+inst:building_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2
+        rdf:type               bot:Building ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2 ;
+        geo:hasGeometry        _:b1 ;
+        owl:sameAs             inst:IfcBuilding_101 .
+
+inst:site_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+        bot:hasBuilding            inst:building_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2 ;
+        rdf:type                   bot:Site ;
+        props:globalIdIfcRoot      inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        props:nameIfcRoot          inst:nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        props:refElevationIfcSite  inst:refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        geo:hasGeometry            _:b2 ;
+        owl:sameAs                 inst:IfcSite_107 .
+
+_:b0    <https://w3id.org/fog#asObj_v3.0-obj>  "diAwLjc4IC0yLjcxIDYuNjMKdiAwLjc4IC0yLjcxIDcuNzIKdiAtMC4zMiAtMi42MSA2LjYzCnYgLTAuMzIgLTIuNjEgNy43Mgp2IC0wLjMyIC0yLjYxIDYuNjMKdiAtMC4zMiAtMi42MSA3LjcyCnYgMC43OCAtMi43MSA2LjYzCnYgMC43OCAtMi43MSA3LjcyCmYgMiAxIDMKZiA0IDIgMwpmIDYgNSA3CmYgOCA2IDcK"^^<https://www.w3.org/TR/xmlschema-2/#base64Binary> ;
+        geo:asWKT  "MULTIPOINT Z((-0.32 -2.71 6.63), (0.78 -2.61 7.72))" .

@@ -1,0 +1,1627 @@
+# baseURI: http://w3id.org/ioc#
+# imports: https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL
+
+@base          <http://w3id.org/ioc#> .
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#> .
+@prefix inst: <http://w3id.org/ioc#> .
+@prefix list: <https://w3id.org/list#> .
+@prefix express: <https://w3id.org/express#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+inst:   rdf:type     owl:Ontology ;
+        owl:imports  ifc: .
+
+inst:IfcOrganization_1
+        rdf:type  ifc:IfcOrganization .
+
+inst:IfcLabel_164  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Autodesk Revit 2023 (ENU)" .
+
+inst:IfcOrganization_1
+        ifc:name_IfcOrganization  inst:IfcLabel_164 .
+
+inst:IfcApplication_2
+        rdf:type  ifc:IfcApplication ;
+        ifc:applicationDeveloper_IfcApplication  inst:IfcOrganization_1 .
+
+inst:IfcLabel_165  rdf:type  ifc:IfcLabel ;
+        express:hasString  "2023" .
+
+inst:IfcApplication_2
+        ifc:version_IfcApplication  inst:IfcLabel_165 ;
+        ifc:applicationFullName_IfcApplication  inst:IfcLabel_164 .
+
+inst:IfcIdentifier_166
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "Revit" .
+
+inst:IfcApplication_2
+        ifc:applicationIdentifier_IfcApplication  inst:IfcIdentifier_166 .
+
+inst:IfcDirection_5  rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_167  rdf:type  express:REAL_List .
+
+inst:IfcDirection_5  ifc:directionRatios_IfcDirection  inst:REAL_List_167 .
+
+inst:REAL_List_168  rdf:type  express:REAL_List .
+
+inst:REAL_List_169  rdf:type  express:REAL_List .
+
+inst:REAL_170  rdf:type    express:REAL ;
+        express:hasDouble  "1."^^xsd:double .
+
+inst:REAL_List_167  list:hasContents  inst:REAL_170 ;
+        list:hasNext      inst:REAL_List_168 .
+
+inst:REAL_171  rdf:type    express:REAL ;
+        express:hasDouble  "0."^^xsd:double .
+
+inst:REAL_List_168  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_169 .
+
+inst:REAL_List_169  list:hasContents  inst:REAL_171 .
+
+inst:IfcDirection_6  rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_172  rdf:type  express:REAL_List .
+
+inst:IfcDirection_6  ifc:directionRatios_IfcDirection  inst:REAL_List_172 .
+
+inst:REAL_List_173  rdf:type  express:REAL_List .
+
+inst:REAL_List_174  rdf:type  express:REAL_List .
+
+inst:REAL_175  rdf:type    express:REAL ;
+        express:hasDouble  "-1."^^xsd:double .
+
+inst:REAL_List_172  list:hasContents  inst:REAL_175 ;
+        list:hasNext      inst:REAL_List_173 .
+
+inst:REAL_List_173  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_174 .
+
+inst:REAL_List_174  list:hasContents  inst:REAL_171 .
+
+inst:IfcDirection_7  rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_176  rdf:type  express:REAL_List .
+
+inst:IfcDirection_7  ifc:directionRatios_IfcDirection  inst:REAL_List_176 .
+
+inst:REAL_List_177  rdf:type  express:REAL_List .
+
+inst:REAL_List_178  rdf:type  express:REAL_List .
+
+inst:REAL_List_176  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_177 .
+
+inst:REAL_List_177  list:hasContents  inst:REAL_170 ;
+        list:hasNext      inst:REAL_List_178 .
+
+inst:REAL_List_178  list:hasContents  inst:REAL_171 .
+
+inst:IfcDirection_8  rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_179  rdf:type  express:REAL_List .
+
+inst:IfcDirection_8  ifc:directionRatios_IfcDirection  inst:REAL_List_179 .
+
+inst:REAL_List_180  rdf:type  express:REAL_List .
+
+inst:REAL_List_181  rdf:type  express:REAL_List .
+
+inst:REAL_List_179  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_180 .
+
+inst:REAL_List_180  list:hasContents  inst:REAL_175 ;
+        list:hasNext      inst:REAL_List_181 .
+
+inst:REAL_List_181  list:hasContents  inst:REAL_171 .
+
+inst:IfcDirection_9  rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_182  rdf:type  express:REAL_List .
+
+inst:IfcDirection_9  ifc:directionRatios_IfcDirection  inst:REAL_List_182 .
+
+inst:REAL_List_183  rdf:type  express:REAL_List .
+
+inst:REAL_List_184  rdf:type  express:REAL_List .
+
+inst:REAL_List_182  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_183 .
+
+inst:REAL_List_183  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_184 .
+
+inst:REAL_List_184  list:hasContents  inst:REAL_170 .
+
+inst:IfcDirection_10  rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_185  rdf:type  express:REAL_List .
+
+inst:IfcDirection_10  ifc:directionRatios_IfcDirection  inst:REAL_List_185 .
+
+inst:REAL_List_186  rdf:type  express:REAL_List .
+
+inst:REAL_List_187  rdf:type  express:REAL_List .
+
+inst:REAL_List_185  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_186 .
+
+inst:REAL_List_186  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_187 .
+
+inst:REAL_List_187  list:hasContents  inst:REAL_175 .
+
+inst:IfcDirection_11  rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_188  rdf:type  express:REAL_List .
+
+inst:IfcDirection_11  ifc:directionRatios_IfcDirection  inst:REAL_List_188 .
+
+inst:REAL_List_189  rdf:type  express:REAL_List .
+
+inst:REAL_List_188  list:hasContents  inst:REAL_170 ;
+        list:hasNext      inst:REAL_List_189 .
+
+inst:REAL_List_189  list:hasContents  inst:REAL_171 .
+
+inst:IfcDirection_12  rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_190  rdf:type  express:REAL_List .
+
+inst:IfcDirection_12  ifc:directionRatios_IfcDirection  inst:REAL_List_190 .
+
+inst:REAL_List_191  rdf:type  express:REAL_List .
+
+inst:REAL_List_190  list:hasContents  inst:REAL_175 ;
+        list:hasNext      inst:REAL_List_191 .
+
+inst:REAL_List_191  list:hasContents  inst:REAL_171 .
+
+inst:IfcDirection_13  rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_192  rdf:type  express:REAL_List .
+
+inst:IfcDirection_13  ifc:directionRatios_IfcDirection  inst:REAL_List_192 .
+
+inst:REAL_List_193  rdf:type  express:REAL_List .
+
+inst:REAL_List_192  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_193 .
+
+inst:REAL_List_193  list:hasContents  inst:REAL_170 .
+
+inst:IfcDirection_14  rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_194  rdf:type  express:REAL_List .
+
+inst:IfcDirection_14  ifc:directionRatios_IfcDirection  inst:REAL_List_194 .
+
+inst:REAL_List_195  rdf:type  express:REAL_List .
+
+inst:REAL_List_194  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_195 .
+
+inst:REAL_List_195  list:hasContents  inst:REAL_175 .
+
+inst:IfcAxis2Placement3D_15
+        rdf:type  ifc:IfcAxis2Placement3D .
+
+inst:IfcCartesianPoint_3
+        rdf:type  ifc:IfcCartesianPoint .
+
+inst:IfcAxis2Placement3D_15
+        ifc:location_IfcPlacement  inst:IfcCartesianPoint_3 .
+
+inst:IfcLocalPlacement_16
+        rdf:type  ifc:IfcLocalPlacement .
+
+inst:IfcLocalPlacement_106
+        rdf:type  ifc:IfcLocalPlacement .
+
+inst:IfcLocalPlacement_16
+        ifc:placementRelTo_IfcLocalPlacement  inst:IfcLocalPlacement_106 ;
+        ifc:relativePlacement_IfcLocalPlacement  inst:IfcAxis2Placement3D_15 .
+
+inst:IfcPerson_17  rdf:type  ifc:IfcPerson .
+
+inst:IfcLabel_196  rdf:type  ifc:IfcLabel ;
+        express:hasString  "" .
+
+inst:IfcPerson_17  ifc:familyName_IfcPerson  inst:IfcLabel_196 .
+
+inst:IfcLabel_197  rdf:type  ifc:IfcLabel ;
+        express:hasString  "cemre.karaoglan" .
+
+inst:IfcPerson_17  ifc:givenName_IfcPerson  inst:IfcLabel_197 .
+
+inst:IfcOrganization_18
+        rdf:type                  ifc:IfcOrganization ;
+        ifc:name_IfcOrganization  inst:IfcLabel_196 ;
+        ifc:description_IfcOrganization  inst:IfcLabel_196 .
+
+inst:IfcPersonAndOrganization_19
+        rdf:type  ifc:IfcPersonAndOrganization ;
+        ifc:thePerson_IfcPersonAndOrganization  inst:IfcPerson_17 ;
+        ifc:theOrganization_IfcPersonAndOrganization  inst:IfcOrganization_18 .
+
+inst:IfcSIUnit_21  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:LENGTHUNIT ;
+        ifc:prefix_IfcSIUnit       ifc:MILLI ;
+        ifc:name_IfcSIUnit         ifc:METRE .
+
+inst:IfcSIUnit_22  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:LENGTHUNIT ;
+        ifc:name_IfcSIUnit         ifc:METRE .
+
+inst:IfcSIUnit_23  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:AREAUNIT ;
+        ifc:name_IfcSIUnit         ifc:SQUARE_METRE .
+
+inst:IfcSIUnit_24  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:VOLUMEUNIT ;
+        ifc:name_IfcSIUnit         ifc:CUBIC_METRE .
+
+inst:IfcSIUnit_25  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:PLANEANGLEUNIT ;
+        ifc:name_IfcSIUnit         ifc:RADIAN .
+
+inst:IfcDimensionalExponents_26
+        rdf:type  ifc:IfcDimensionalExponents .
+
+inst:INTEGER_198  rdf:type  express:INTEGER ;
+        express:hasInteger  0 .
+
+inst:IfcDimensionalExponents_26
+        ifc:lengthExponent_IfcDimensionalExponents  inst:INTEGER_198 ;
+        ifc:massExponent_IfcDimensionalExponents  inst:INTEGER_198 ;
+        ifc:timeExponent_IfcDimensionalExponents  inst:INTEGER_198 ;
+        ifc:electricCurrentExponent_IfcDimensionalExponents  inst:INTEGER_198 ;
+        ifc:thermodynamicTemperatureExponent_IfcDimensionalExponents  inst:INTEGER_198 ;
+        ifc:amountOfSubstanceExponent_IfcDimensionalExponents  inst:INTEGER_198 ;
+        ifc:luminousIntensityExponent_IfcDimensionalExponents  inst:INTEGER_198 .
+
+inst:IfcMeasureWithUnit_27
+        rdf:type  ifc:IfcMeasureWithUnit .
+
+inst:IfcRatioMeasure_199
+        rdf:type           ifc:IfcRatioMeasure ;
+        express:hasDouble  "0.017453292519943278"^^xsd:double .
+
+inst:IfcMeasureWithUnit_27
+        ifc:valueComponent_IfcMeasureWithUnit  inst:IfcRatioMeasure_199 ;
+        ifc:unitComponent_IfcMeasureWithUnit  inst:IfcSIUnit_25 .
+
+inst:IfcConversionBasedUnit_28
+        rdf:type                     ifc:IfcConversionBasedUnit ;
+        ifc:dimensions_IfcNamedUnit  inst:IfcDimensionalExponents_26 ;
+        ifc:unitType_IfcNamedUnit    ifc:PLANEANGLEUNIT .
+
+inst:IfcLabel_200  rdf:type  ifc:IfcLabel ;
+        express:hasString  "DEGREE" .
+
+inst:IfcConversionBasedUnit_28
+        ifc:name_IfcConversionBasedUnit  inst:IfcLabel_200 ;
+        ifc:conversionFactor_IfcConversionBasedUnit  inst:IfcMeasureWithUnit_27 .
+
+inst:IfcSIUnit_29  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:MASSUNIT ;
+        ifc:prefix_IfcSIUnit       ifc:KILO ;
+        ifc:name_IfcSIUnit         ifc:GRAM .
+
+inst:IfcDerivedUnitElement_30
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_29 .
+
+inst:INTEGER_201  rdf:type  express:INTEGER ;
+        express:hasInteger  1 .
+
+inst:IfcDerivedUnitElement_30
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnitElement_31
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 .
+
+inst:INTEGER_202  rdf:type  express:INTEGER ;
+        express:hasInteger  -3 .
+
+inst:IfcDerivedUnitElement_31
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_202 .
+
+inst:IfcDerivedUnit_32
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_30 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_31 ;
+        ifc:unitType_IfcDerivedUnit  ifc:MASSDENSITYUNIT .
+
+inst:IfcDerivedUnitElement_33
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 .
+
+inst:INTEGER_203  rdf:type  express:INTEGER ;
+        express:hasInteger  4 .
+
+inst:IfcDerivedUnitElement_33
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_203 .
+
+inst:IfcDerivedUnit_34
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_33 ;
+        ifc:unitType_IfcDerivedUnit  ifc:MOMENTOFINERTIAUNIT .
+
+inst:IfcSIUnit_35  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:TIMEUNIT ;
+        ifc:name_IfcSIUnit         ifc:SECOND .
+
+inst:IfcSIUnit_36  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:FREQUENCYUNIT ;
+        ifc:name_IfcSIUnit         ifc:HERTZ .
+
+inst:IfcSIUnit_37  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:THERMODYNAMICTEMPERATUREUNIT ;
+        ifc:name_IfcSIUnit         ifc:KELVIN .
+
+inst:IfcSIUnit_38  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:THERMODYNAMICTEMPERATUREUNIT ;
+        ifc:name_IfcSIUnit         ifc:DEGREE_CELSIUS .
+
+inst:IfcDerivedUnitElement_39
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_29 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnitElement_40
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_37 .
+
+inst:INTEGER_204  rdf:type  express:INTEGER ;
+        express:hasInteger  -1 .
+
+inst:IfcDerivedUnitElement_40
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_204 .
+
+inst:IfcDerivedUnitElement_41
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_35 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_202 .
+
+inst:IfcDerivedUnit_42
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_39 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_40 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_41 ;
+        ifc:unitType_IfcDerivedUnit  ifc:THERMALTRANSMITTANCEUNIT .
+
+inst:IfcDerivedUnitElement_43
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 .
+
+inst:INTEGER_205  rdf:type  express:INTEGER ;
+        express:hasInteger  3 .
+
+inst:IfcDerivedUnitElement_43
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_205 .
+
+inst:IfcDerivedUnitElement_44
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_35 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_204 .
+
+inst:IfcDerivedUnit_45
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_43 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_44 ;
+        ifc:unitType_IfcDerivedUnit  ifc:VOLUMETRICFLOWRATEUNIT .
+
+inst:IfcDerivedUnitElement_46
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_29 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnitElement_47
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_35 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_204 .
+
+inst:IfcDerivedUnit_48
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_46 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_47 ;
+        ifc:unitType_IfcDerivedUnit  ifc:MASSFLOWRATEUNIT .
+
+inst:IfcDerivedUnitElement_49
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_35 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_204 .
+
+inst:IfcDerivedUnit_50
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_49 ;
+        ifc:unitType_IfcDerivedUnit  ifc:ROTATIONALFREQUENCYUNIT .
+
+inst:IfcSIUnit_51  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:ELECTRICCURRENTUNIT ;
+        ifc:name_IfcSIUnit         ifc:AMPERE .
+
+inst:IfcSIUnit_52  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:ELECTRICVOLTAGEUNIT ;
+        ifc:name_IfcSIUnit         ifc:VOLT .
+
+inst:IfcSIUnit_53  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:POWERUNIT ;
+        ifc:name_IfcSIUnit         ifc:WATT .
+
+inst:IfcSIUnit_54  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:FORCEUNIT ;
+        ifc:name_IfcSIUnit         ifc:NEWTON .
+
+inst:IfcSIUnit_55  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:ILLUMINANCEUNIT ;
+        ifc:name_IfcSIUnit         ifc:LUX .
+
+inst:IfcSIUnit_56  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:LUMINOUSFLUXUNIT ;
+        ifc:name_IfcSIUnit         ifc:LUMEN .
+
+inst:IfcSIUnit_57  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:LUMINOUSINTENSITYUNIT ;
+        ifc:name_IfcSIUnit         ifc:CANDELA .
+
+inst:IfcDerivedUnitElement_58
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_29 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_204 .
+
+inst:IfcDerivedUnitElement_59
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 .
+
+inst:INTEGER_206  rdf:type  express:INTEGER ;
+        express:hasInteger  -2 .
+
+inst:IfcDerivedUnitElement_59
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_206 .
+
+inst:IfcDerivedUnitElement_60
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_35 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_205 .
+
+inst:IfcDerivedUnitElement_61
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_56 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnit_62
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_58 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_59 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_60 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_61 ;
+        ifc:unitType_IfcDerivedUnit  ifc:USERDEFINED .
+
+inst:IfcLabel_207  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Luminous Efficacy" .
+
+inst:IfcDerivedUnit_62
+        ifc:userDefinedType_IfcDerivedUnit  inst:IfcLabel_207 .
+
+inst:IfcDerivedUnitElement_63
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_29 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnitElement_64
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 .
+
+inst:INTEGER_208  rdf:type  express:INTEGER ;
+        express:hasInteger  2 .
+
+inst:IfcDerivedUnitElement_64
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_208 .
+
+inst:IfcDerivedUnitElement_65
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_35 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_202 .
+
+inst:IfcDerivedUnit_66
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_63 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_64 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_65 ;
+        ifc:unitType_IfcDerivedUnit  ifc:SOUNDPOWERUNIT .
+
+inst:IfcDerivedUnitElement_67
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_29 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnitElement_68
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_204 .
+
+inst:IfcDerivedUnitElement_69
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_35 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_206 .
+
+inst:IfcDerivedUnit_70
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_67 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_68 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_69 ;
+        ifc:unitType_IfcDerivedUnit  ifc:SOUNDPRESSUREUNIT .
+
+inst:IfcDerivedUnitElement_71
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnitElement_72
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_35 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_204 .
+
+inst:IfcDerivedUnit_73
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_71 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_72 ;
+        ifc:unitType_IfcDerivedUnit  ifc:LINEARVELOCITYUNIT .
+
+inst:IfcSIUnit_74  rdf:type        ifc:IfcSIUnit ;
+        ifc:unitType_IfcNamedUnit  ifc:PRESSUREUNIT ;
+        ifc:name_IfcSIUnit         ifc:PASCAL .
+
+inst:IfcDerivedUnitElement_75
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_206 .
+
+inst:IfcDerivedUnitElement_76
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_29 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnitElement_77
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_35 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_206 .
+
+inst:IfcDerivedUnit_78
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_75 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_76 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_77 ;
+        ifc:unitType_IfcDerivedUnit  ifc:USERDEFINED .
+
+inst:IfcLabel_209  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Friction Loss" .
+
+inst:IfcDerivedUnit_78
+        ifc:userDefinedType_IfcDerivedUnit  inst:IfcLabel_209 .
+
+inst:IfcDerivedUnitElement_79
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_29 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnitElement_80
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnitElement_81
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_35 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_206 .
+
+inst:IfcDerivedUnitElement_82
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_204 .
+
+inst:IfcDerivedUnit_83
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_79 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_80 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_81 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_82 ;
+        ifc:unitType_IfcDerivedUnit  ifc:LINEARFORCEUNIT .
+
+inst:IfcDerivedUnitElement_84
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_29 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnitElement_85
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_201 .
+
+inst:IfcDerivedUnitElement_86
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_35 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_206 .
+
+inst:IfcDerivedUnitElement_87
+        rdf:type                        ifc:IfcDerivedUnitElement ;
+        ifc:unit_IfcDerivedUnitElement  inst:IfcSIUnit_22 ;
+        ifc:exponent_IfcDerivedUnitElement  inst:INTEGER_206 .
+
+inst:IfcDerivedUnit_88
+        rdf:type                     ifc:IfcDerivedUnit ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_84 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_85 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_86 ;
+        ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_87 ;
+        ifc:unitType_IfcDerivedUnit  ifc:PLANARFORCEUNIT .
+
+inst:IfcUnitAssignment_89
+        rdf:type                     ifc:IfcUnitAssignment ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_21 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_23 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_24 ;
+        ifc:units_IfcUnitAssignment  inst:IfcConversionBasedUnit_28 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_29 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_32 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_34 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_35 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_36 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_38 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_42 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_45 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_48 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_50 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_51 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_52 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_53 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_54 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_55 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_56 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_57 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_62 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_66 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_70 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_73 ;
+        ifc:units_IfcUnitAssignment  inst:IfcSIUnit_74 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_78 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_83 ;
+        ifc:units_IfcUnitAssignment  inst:IfcDerivedUnit_88 .
+
+inst:IfcAxis2Placement3D_90
+        rdf:type                   ifc:IfcAxis2Placement3D ;
+        ifc:location_IfcPlacement  inst:IfcCartesianPoint_3 .
+
+inst:IfcDirection_91  rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_210  rdf:type  express:REAL_List .
+
+inst:IfcDirection_91  ifc:directionRatios_IfcDirection  inst:REAL_List_210 .
+
+inst:REAL_List_211  rdf:type  express:REAL_List .
+
+inst:REAL_212  rdf:type    express:REAL ;
+        express:hasDouble  6.1230317691118863E-17 .
+
+inst:REAL_List_210  list:hasContents  inst:REAL_212 ;
+        list:hasNext      inst:REAL_List_211 .
+
+inst:REAL_List_211  list:hasContents  inst:REAL_170 .
+
+inst:IfcGeometricRepresentationContext_92
+        rdf:type  ifc:IfcGeometricRepresentationContext .
+
+inst:IfcLabel_213  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Model" .
+
+inst:IfcGeometricRepresentationContext_92
+        ifc:contextType_IfcRepresentationContext  inst:IfcLabel_213 ;
+        ifc:coordinateSpaceDimension_IfcGeometricRepresentationContext  inst:INTEGER_205 .
+
+inst:REAL_214  rdf:type    express:REAL ;
+        express:hasDouble  "0.01"^^xsd:double .
+
+inst:IfcGeometricRepresentationContext_92
+        ifc:precision_IfcGeometricRepresentationContext  inst:REAL_214 ;
+        ifc:worldCoordinateSystem_IfcGeometricRepresentationContext  inst:IfcAxis2Placement3D_90 ;
+        ifc:trueNorth_IfcGeometricRepresentationContext  inst:IfcDirection_91 .
+
+inst:IfcGeometricRepresentationSubContext_93
+        rdf:type  ifc:IfcGeometricRepresentationSubContext .
+
+inst:IfcLabel_215  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Axis" .
+
+inst:IfcGeometricRepresentationSubContext_93
+        ifc:contextIdentifier_IfcRepresentationContext  inst:IfcLabel_215 ;
+        ifc:contextType_IfcRepresentationContext  inst:IfcLabel_213 ;
+        ifc:parentContext_IfcGeometricRepresentationSubContext  inst:IfcGeometricRepresentationContext_92 ;
+        ifc:targetView_IfcGeometricRepresentationSubContext  ifc:GRAPH_VIEW .
+
+inst:IfcGeometricRepresentationSubContext_94
+        rdf:type  ifc:IfcGeometricRepresentationSubContext .
+
+inst:IfcLabel_216  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Body" .
+
+inst:IfcGeometricRepresentationSubContext_94
+        ifc:contextIdentifier_IfcRepresentationContext  inst:IfcLabel_216 ;
+        ifc:contextType_IfcRepresentationContext  inst:IfcLabel_213 ;
+        ifc:parentContext_IfcGeometricRepresentationSubContext  inst:IfcGeometricRepresentationContext_92 ;
+        ifc:targetView_IfcGeometricRepresentationSubContext  ifc:MODEL_VIEW .
+
+inst:IfcGeometricRepresentationSubContext_95
+        rdf:type  ifc:IfcGeometricRepresentationSubContext .
+
+inst:IfcLabel_217  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Box" .
+
+inst:IfcGeometricRepresentationSubContext_95
+        ifc:contextIdentifier_IfcRepresentationContext  inst:IfcLabel_217 ;
+        ifc:contextType_IfcRepresentationContext  inst:IfcLabel_213 ;
+        ifc:parentContext_IfcGeometricRepresentationSubContext  inst:IfcGeometricRepresentationContext_92 ;
+        ifc:targetView_IfcGeometricRepresentationSubContext  ifc:MODEL_VIEW .
+
+inst:IfcGeometricRepresentationSubContext_96
+        rdf:type  ifc:IfcGeometricRepresentationSubContext .
+
+inst:IfcLabel_218  rdf:type  ifc:IfcLabel ;
+        express:hasString  "FootPrint" .
+
+inst:IfcGeometricRepresentationSubContext_96
+        ifc:contextIdentifier_IfcRepresentationContext  inst:IfcLabel_218 ;
+        ifc:contextType_IfcRepresentationContext  inst:IfcLabel_213 ;
+        ifc:parentContext_IfcGeometricRepresentationSubContext  inst:IfcGeometricRepresentationContext_92 ;
+        ifc:targetView_IfcGeometricRepresentationSubContext  ifc:MODEL_VIEW .
+
+inst:IfcGeometricRepresentationContext_97
+        rdf:type  ifc:IfcGeometricRepresentationContext .
+
+inst:IfcLabel_219  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Plan" .
+
+inst:IfcGeometricRepresentationContext_97
+        ifc:contextType_IfcRepresentationContext  inst:IfcLabel_219 ;
+        ifc:coordinateSpaceDimension_IfcGeometricRepresentationContext  inst:INTEGER_205 ;
+        ifc:precision_IfcGeometricRepresentationContext  inst:REAL_214 ;
+        ifc:worldCoordinateSystem_IfcGeometricRepresentationContext  inst:IfcAxis2Placement3D_90 ;
+        ifc:trueNorth_IfcGeometricRepresentationContext  inst:IfcDirection_91 .
+
+inst:IfcGeometricRepresentationSubContext_98
+        rdf:type  ifc:IfcGeometricRepresentationSubContext .
+
+inst:IfcLabel_220  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Annotation" .
+
+inst:IfcGeometricRepresentationSubContext_98
+        ifc:contextType_IfcRepresentationContext  inst:IfcLabel_220 ;
+        ifc:parentContext_IfcGeometricRepresentationSubContext  inst:IfcGeometricRepresentationContext_97 ;
+        ifc:targetScale_IfcGeometricRepresentationSubContext  inst:REAL_214 ;
+        ifc:targetView_IfcGeometricRepresentationSubContext  ifc:PLAN_VIEW .
+
+inst:IfcProject_99  rdf:type  ifc:IfcProject .
+
+inst:IfcGloballyUniqueId_221
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "3Sk_9SPbf3uhLES_BTzlEZ" .
+
+inst:IfcProject_99  ifc:globalId_IfcRoot  inst:IfcGloballyUniqueId_221 .
+
+inst:IfcOwnerHistory_20
+        rdf:type  ifc:IfcOwnerHistory .
+
+inst:IfcProject_99  ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 .
+
+inst:IfcLabel_222  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Project Number" .
+
+inst:IfcProject_99  ifc:name_IfcRoot  inst:IfcLabel_222 .
+
+inst:IfcLabel_223  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Project Name" .
+
+inst:IfcProject_99  ifc:longName_IfcProject  inst:IfcLabel_223 .
+
+inst:IfcLabel_224  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Project Status" .
+
+inst:IfcProject_99  ifc:phase_IfcProject  inst:IfcLabel_224 ;
+        ifc:representationContexts_IfcProject  inst:IfcGeometricRepresentationContext_92 ;
+        ifc:representationContexts_IfcProject  inst:IfcGeometricRepresentationContext_97 ;
+        ifc:unitsInContext_IfcProject  inst:IfcUnitAssignment_89 .
+
+inst:IfcPostalAddress_100
+        rdf:type  ifc:IfcPostalAddress .
+
+inst:IfcLabel_List_225
+        rdf:type  ifc:IfcLabel_List .
+
+inst:IfcPostalAddress_100
+        ifc:addressLines_IfcPostalAddress  inst:IfcLabel_List_225 .
+
+inst:IfcLabel_226  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Enter address here" .
+
+inst:IfcLabel_List_225
+        list:hasContents  inst:IfcLabel_226 .
+
+inst:IfcPostalAddress_100
+        ifc:town_IfcPostalAddress  inst:IfcLabel_196 .
+
+inst:IfcLabel_227  rdf:type  ifc:IfcLabel ;
+        express:hasString  "London" .
+
+inst:IfcPostalAddress_100
+        ifc:region_IfcPostalAddress  inst:IfcLabel_227 ;
+        ifc:postalCode_IfcPostalAddress  inst:IfcLabel_196 .
+
+inst:IfcLabel_228  rdf:type  ifc:IfcLabel ;
+        express:hasString  "London United Kingdom" .
+
+inst:IfcPostalAddress_100
+        ifc:country_IfcPostalAddress  inst:IfcLabel_228 .
+
+inst:IfcBuilding_101  rdf:type  ifc:IfcBuilding .
+
+inst:IfcGloballyUniqueId_229
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "3Sk_9SPbf3uhLES_BTzlEY" .
+
+inst:IfcBuilding_101  ifc:globalId_IfcRoot  inst:IfcGloballyUniqueId_229 ;
+        ifc:ownerHistory_IfcRoot        inst:IfcOwnerHistory_20 ;
+        ifc:name_IfcRoot                inst:IfcLabel_196 ;
+        ifc:objectPlacement_IfcProduct  inst:IfcLocalPlacement_16 ;
+        ifc:longName_IfcSpatialStructureElement  inst:IfcLabel_196 ;
+        ifc:compositionType_IfcSpatialStructureElement  ifc:ELEMENT ;
+        ifc:buildingAddress_IfcBuilding  inst:IfcPostalAddress_100 .
+
+inst:IfcAxis2Placement3D_102
+        rdf:type                   ifc:IfcAxis2Placement3D ;
+        ifc:location_IfcPlacement  inst:IfcCartesianPoint_3 .
+
+inst:IfcAxis2Placement3D_105
+        rdf:type                   ifc:IfcAxis2Placement3D ;
+        ifc:location_IfcPlacement  inst:IfcCartesianPoint_3 .
+
+inst:IfcLocalPlacement_106
+        ifc:relativePlacement_IfcLocalPlacement  inst:IfcAxis2Placement3D_105 .
+
+inst:IfcSite_107  rdf:type  ifc:IfcSite .
+
+inst:IfcGloballyUniqueId_230
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "3Sk_9SPbf3uhLES_BTzlEX" .
+
+inst:IfcSite_107  ifc:globalId_IfcRoot  inst:IfcGloballyUniqueId_230 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 .
+
+inst:IfcLabel_231  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Default" .
+
+inst:IfcSite_107  ifc:name_IfcRoot      inst:IfcLabel_231 ;
+        ifc:objectPlacement_IfcProduct  inst:IfcLocalPlacement_106 ;
+        ifc:compositionType_IfcSpatialStructureElement  ifc:ELEMENT .
+
+inst:IfcCompoundPlaneAngleMeasure_232
+        rdf:type  ifc:IfcCompoundPlaneAngleMeasure .
+
+inst:IfcSite_107  ifc:refLatitude_IfcSite  inst:IfcCompoundPlaneAngleMeasure_232 .
+
+inst:IfcCompoundPlaneAngleMeasure_233
+        rdf:type  ifc:IfcCompoundPlaneAngleMeasure .
+
+inst:IfcCompoundPlaneAngleMeasure_234
+        rdf:type  ifc:IfcCompoundPlaneAngleMeasure .
+
+inst:IfcCompoundPlaneAngleMeasure_235
+        rdf:type  ifc:IfcCompoundPlaneAngleMeasure .
+
+inst:INTEGER_236  rdf:type  express:INTEGER ;
+        express:hasInteger  51 .
+
+inst:IfcCompoundPlaneAngleMeasure_232
+        list:hasContents  inst:INTEGER_236 ;
+        list:hasNext      inst:IfcCompoundPlaneAngleMeasure_233 .
+
+inst:INTEGER_237  rdf:type  express:INTEGER ;
+        express:hasInteger  30 .
+
+inst:IfcCompoundPlaneAngleMeasure_233
+        list:hasContents  inst:INTEGER_237 ;
+        list:hasNext      inst:IfcCompoundPlaneAngleMeasure_234 .
+
+inst:INTEGER_238  rdf:type  express:INTEGER ;
+        express:hasInteger  23 .
+
+inst:IfcCompoundPlaneAngleMeasure_234
+        list:hasContents  inst:INTEGER_238 ;
+        list:hasNext      inst:IfcCompoundPlaneAngleMeasure_235 .
+
+inst:INTEGER_239  rdf:type  express:INTEGER ;
+        express:hasInteger  112486 .
+
+inst:IfcCompoundPlaneAngleMeasure_235
+        list:hasContents  inst:INTEGER_239 .
+
+inst:IfcCompoundPlaneAngleMeasure_240
+        rdf:type  ifc:IfcCompoundPlaneAngleMeasure .
+
+inst:IfcSite_107  ifc:refLongitude_IfcSite  inst:IfcCompoundPlaneAngleMeasure_240 .
+
+inst:IfcCompoundPlaneAngleMeasure_241
+        rdf:type  ifc:IfcCompoundPlaneAngleMeasure .
+
+inst:IfcCompoundPlaneAngleMeasure_242
+        rdf:type  ifc:IfcCompoundPlaneAngleMeasure .
+
+inst:IfcCompoundPlaneAngleMeasure_243
+        rdf:type  ifc:IfcCompoundPlaneAngleMeasure .
+
+inst:IfcCompoundPlaneAngleMeasure_240
+        list:hasContents  inst:INTEGER_198 ;
+        list:hasNext      inst:IfcCompoundPlaneAngleMeasure_241 .
+
+inst:INTEGER_244  rdf:type  express:INTEGER ;
+        express:hasInteger  -7 .
+
+inst:IfcCompoundPlaneAngleMeasure_241
+        list:hasContents  inst:INTEGER_244 ;
+        list:hasNext      inst:IfcCompoundPlaneAngleMeasure_242 .
+
+inst:INTEGER_245  rdf:type  express:INTEGER ;
+        express:hasInteger  -37 .
+
+inst:IfcCompoundPlaneAngleMeasure_242
+        list:hasContents  inst:INTEGER_245 ;
+        list:hasNext      inst:IfcCompoundPlaneAngleMeasure_243 .
+
+inst:INTEGER_246  rdf:type  express:INTEGER ;
+        express:hasInteger  -956021 .
+
+inst:IfcCompoundPlaneAngleMeasure_243
+        list:hasContents  inst:INTEGER_246 .
+
+inst:IfcSite_107  ifc:refElevation_IfcSite  inst:REAL_171 .
+
+inst:IfcPropertySingleValue_108
+        rdf:type  ifc:IfcPropertySingleValue .
+
+inst:IfcIdentifier_247
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "Category" .
+
+inst:IfcPropertySingleValue_108
+        ifc:name_IfcProperty  inst:IfcIdentifier_247 .
+
+inst:IfcLabel_248  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Project Information" .
+
+inst:IfcPropertySingleValue_108
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_248 .
+
+inst:IfcPropertySet_109
+        rdf:type  ifc:IfcPropertySet .
+
+inst:IfcGloballyUniqueId_249
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "3Dtt$kGLYQlRZjxd6th4Jv" .
+
+inst:IfcPropertySet_109
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_249 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 .
+
+inst:IfcLabel_250  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Pset_ProductRequirements" .
+
+inst:IfcPropertySet_109
+        ifc:name_IfcRoot  inst:IfcLabel_250 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_108 .
+
+inst:IfcRelDefinesByProperties_110
+        rdf:type  ifc:IfcRelDefinesByProperties .
+
+inst:IfcGloballyUniqueId_251
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "1F6837pG95j9AmYcYckg41" .
+
+inst:IfcRelDefinesByProperties_110
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_251 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:relatedObjects_IfcRelDefines  inst:IfcSite_107 ;
+        ifc:relatingPropertyDefinition_IfcRelDefinesByProperties  inst:IfcPropertySet_109 .
+
+inst:IfcPropertySingleValue_111
+        rdf:type  ifc:IfcPropertySingleValue .
+
+inst:IfcIdentifier_252
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "Author" .
+
+inst:IfcPropertySingleValue_111
+        ifc:name_IfcProperty  inst:IfcIdentifier_252 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_196 .
+
+inst:IfcPropertySingleValue_112
+        rdf:type  ifc:IfcPropertySingleValue .
+
+inst:IfcIdentifier_253
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "Building Name" .
+
+inst:IfcPropertySingleValue_112
+        ifc:name_IfcProperty  inst:IfcIdentifier_253 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_196 .
+
+inst:IfcPropertySingleValue_113
+        rdf:type  ifc:IfcPropertySingleValue .
+
+inst:IfcIdentifier_254
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "Organization Description" .
+
+inst:IfcPropertySingleValue_113
+        ifc:name_IfcProperty  inst:IfcIdentifier_254 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_196 .
+
+inst:IfcPropertySingleValue_114
+        rdf:type  ifc:IfcPropertySingleValue .
+
+inst:IfcIdentifier_255
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "Organization Name" .
+
+inst:IfcPropertySingleValue_114
+        ifc:name_IfcProperty  inst:IfcIdentifier_255 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_196 .
+
+inst:IfcPropertySingleValue_115
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcIdentifier_247 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_248 .
+
+inst:IfcPropertySingleValue_116
+        rdf:type  ifc:IfcPropertySingleValue .
+
+inst:IfcIdentifier_256
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "Client Name" .
+
+inst:IfcPropertySingleValue_116
+        ifc:name_IfcProperty  inst:IfcIdentifier_256 .
+
+inst:IfcText_257  rdf:type  ifc:IfcText ;
+        express:hasString  "Owner" .
+
+inst:IfcPropertySingleValue_116
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcText_257 .
+
+inst:IfcPropertySingleValue_117
+        rdf:type  ifc:IfcPropertySingleValue .
+
+inst:IfcIdentifier_258
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "Project Address" .
+
+inst:IfcPropertySingleValue_117
+        ifc:name_IfcProperty  inst:IfcIdentifier_258 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_226 .
+
+inst:IfcPropertySingleValue_118
+        rdf:type  ifc:IfcPropertySingleValue .
+
+inst:IfcIdentifier_259
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "Project Issue Date" .
+
+inst:IfcPropertySingleValue_118
+        ifc:name_IfcProperty  inst:IfcIdentifier_259 .
+
+inst:IfcText_260  rdf:type  ifc:IfcText ;
+        express:hasString  "Issue Date" .
+
+inst:IfcPropertySingleValue_118
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcText_260 .
+
+inst:IfcPropertySingleValue_119
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcLabel_223 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_223 .
+
+inst:IfcPropertySingleValue_120
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcLabel_222 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_222 .
+
+inst:IfcPropertySingleValue_121
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcLabel_224 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_224 .
+
+inst:IfcPropertySet_122
+        rdf:type  ifc:IfcPropertySet .
+
+inst:IfcGloballyUniqueId_261
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "1b7tIashzEUx2OLvY24_7R" .
+
+inst:IfcPropertySet_122
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_261 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 .
+
+inst:IfcLabel_262  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Identity Data" .
+
+inst:IfcPropertySet_122
+        ifc:name_IfcRoot  inst:IfcLabel_262 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_111 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_112 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_113 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_114 .
+
+inst:IfcRelDefinesByProperties_123
+        rdf:type  ifc:IfcRelDefinesByProperties .
+
+inst:IfcGloballyUniqueId_263
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "1b7tIashzEUx2OLfY24_7R" .
+
+inst:IfcRelDefinesByProperties_123
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_263 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:relatedObjects_IfcRelDefines  inst:IfcSite_107 ;
+        ifc:relatingPropertyDefinition_IfcRelDefinesByProperties  inst:IfcPropertySet_122 .
+
+inst:IfcPropertySet_124
+        rdf:type  ifc:IfcPropertySet .
+
+inst:IfcGloballyUniqueId_264
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "0a4ASVWQD4H9st09BRQE4v" .
+
+inst:IfcPropertySet_124
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_264 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 .
+
+inst:IfcLabel_265  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Other" .
+
+inst:IfcPropertySet_124
+        ifc:name_IfcRoot  inst:IfcLabel_265 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_115 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_116 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_117 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_118 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_119 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_120 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_121 .
+
+inst:IfcRelDefinesByProperties_125
+        rdf:type  ifc:IfcRelDefinesByProperties .
+
+inst:IfcGloballyUniqueId_266
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "3ZVyltG6jBYf6HGI0cHoeA" .
+
+inst:IfcRelDefinesByProperties_125
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_266 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:relatedObjects_IfcRelDefines  inst:IfcSite_107 ;
+        ifc:relatingPropertyDefinition_IfcRelDefinesByProperties  inst:IfcPropertySet_124 .
+
+inst:IfcAxis2Placement3D_128
+        rdf:type                   ifc:IfcAxis2Placement3D ;
+        ifc:location_IfcPlacement  inst:IfcCartesianPoint_3 .
+
+inst:IfcAxis2Placement3D_130
+        rdf:type                   ifc:IfcAxis2Placement3D ;
+        ifc:location_IfcPlacement  inst:IfcCartesianPoint_3 .
+
+inst:IfcRelAggregates_132
+        rdf:type  ifc:IfcRelAggregates .
+
+inst:IfcGloballyUniqueId_267
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "2iAoGrfWXDzQL9M4A0WIQQ" .
+
+inst:IfcRelAggregates_132
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_267 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:relatingObject_IfcRelDecomposes  inst:IfcProject_99 ;
+        ifc:relatedObjects_IfcRelDecomposes  inst:IfcSite_107 .
+
+inst:IfcRelAggregates_133
+        rdf:type  ifc:IfcRelAggregates .
+
+inst:IfcGloballyUniqueId_268
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "2i70SxyH58bvOxH2$jyXFV" .
+
+inst:IfcRelAggregates_133
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_268 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:relatingObject_IfcRelDecomposes  inst:IfcSite_107 ;
+        ifc:relatedObjects_IfcRelDecomposes  inst:IfcBuilding_101 .
+
+inst:IfcPropertySingleValue_134
+        rdf:type  ifc:IfcPropertySingleValue .
+
+inst:IfcIdentifier_269
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "NumberOfStoreys" .
+
+inst:IfcPropertySingleValue_134
+        ifc:name_IfcProperty  inst:IfcIdentifier_269 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:INTEGER_201 .
+
+inst:IfcPropertySingleValue_135
+        rdf:type  ifc:IfcPropertySingleValue .
+
+inst:IfcIdentifier_270
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "IsLandmarked" .
+
+inst:IfcPropertySingleValue_135
+        ifc:name_IfcProperty  inst:IfcIdentifier_270 .
+
+inst:IfcLogical_271  rdf:type  ifc:IfcLogical ;
+        express:hasLogical  express:UNKNOWN .
+
+inst:IfcPropertySingleValue_135
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLogical_271 .
+
+inst:IfcPropertySet_136
+        rdf:type  ifc:IfcPropertySet .
+
+inst:IfcGloballyUniqueId_272
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "2uST$0c5DD$8uB2y_19xoZ" .
+
+inst:IfcPropertySet_136
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_272 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 .
+
+inst:IfcLabel_273  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Pset_BuildingCommon" .
+
+inst:IfcPropertySet_136
+        ifc:name_IfcRoot  inst:IfcLabel_273 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_134 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_135 .
+
+inst:IfcPropertySingleValue_137
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcIdentifier_247 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_248 .
+
+inst:IfcPropertySet_138
+        rdf:type  ifc:IfcPropertySet .
+
+inst:IfcGloballyUniqueId_274
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "3cpl9oVoz9tOgFyTym5O_z" .
+
+inst:IfcPropertySet_138
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_274 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:name_IfcRoot          inst:IfcLabel_250 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_137 .
+
+inst:IfcRelDefinesByProperties_139
+        rdf:type  ifc:IfcRelDefinesByProperties .
+
+inst:IfcGloballyUniqueId_275
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "1nYiZpudz6qRu3QHoIBPEU" .
+
+inst:IfcRelDefinesByProperties_139
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_275 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:relatedObjects_IfcRelDefines  inst:IfcBuilding_101 ;
+        ifc:relatingPropertyDefinition_IfcRelDefinesByProperties  inst:IfcPropertySet_136 .
+
+inst:IfcRelDefinesByProperties_140
+        rdf:type  ifc:IfcRelDefinesByProperties .
+
+inst:IfcGloballyUniqueId_276
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "1BILkXQXT4GuD3yTu6xk7E" .
+
+inst:IfcRelDefinesByProperties_140
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_276 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:relatedObjects_IfcRelDefines  inst:IfcBuilding_101 ;
+        ifc:relatingPropertyDefinition_IfcRelDefinesByProperties  inst:IfcPropertySet_138 .
+
+inst:IfcPropertySingleValue_141
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcIdentifier_256 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcText_257 .
+
+inst:IfcPropertySingleValue_142
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcIdentifier_258 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_226 .
+
+inst:IfcPropertySingleValue_143
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcIdentifier_259 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcText_260 .
+
+inst:IfcPropertySingleValue_144
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcLabel_223 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_223 .
+
+inst:IfcPropertySingleValue_145
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcLabel_222 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_222 .
+
+inst:IfcPropertySingleValue_146
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcLabel_224 ;
+        ifc:nominalValue_IfcPropertySingleValue  inst:IfcLabel_224 .
+
+inst:IfcPropertySet_147
+        rdf:type  ifc:IfcPropertySet .
+
+inst:IfcGloballyUniqueId_277
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "3bDuFvBRH53BWvyk42974Q" .
+
+inst:IfcPropertySet_147
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_277 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:name_IfcRoot          inst:IfcLabel_262 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_111 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_112 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_113 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_114 .
+
+inst:IfcRelDefinesByProperties_148
+        rdf:type  ifc:IfcRelDefinesByProperties .
+
+inst:IfcGloballyUniqueId_278
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "0ivlWVcUrE5A0x4fA0xJHl" .
+
+inst:IfcRelDefinesByProperties_148
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_278 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:relatedObjects_IfcRelDefines  inst:IfcBuilding_101 ;
+        ifc:relatingPropertyDefinition_IfcRelDefinesByProperties  inst:IfcPropertySet_147 .
+
+inst:IfcPropertySet_149
+        rdf:type  ifc:IfcPropertySet .
+
+inst:IfcGloballyUniqueId_279
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "32KbkXBcT0CAUwpIodhPoh" .
+
+inst:IfcPropertySet_149
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_279 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:name_IfcRoot          inst:IfcLabel_265 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_115 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_141 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_142 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_143 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_144 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_145 ;
+        ifc:hasProperties_IfcPropertySet  inst:IfcPropertySingleValue_146 .
+
+inst:IfcRelDefinesByProperties_150
+        rdf:type  ifc:IfcRelDefinesByProperties .
+
+inst:IfcGloballyUniqueId_280
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "3$wYhAaxj2BvkBqBx7fxYr" .
+
+inst:IfcRelDefinesByProperties_150
+        ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_280 ;
+        ifc:ownerHistory_IfcRoot  inst:IfcOwnerHistory_20 ;
+        ifc:relatedObjects_IfcRelDefines  inst:IfcBuilding_101 ;
+        ifc:relatingPropertyDefinition_IfcRelDefinesByProperties  inst:IfcPropertySet_149 .
+
+inst:IfcPolyline_156  rdf:type  ifc:IfcPolyline .
+
+inst:IfcCartesianPoint_List_281
+        rdf:type  ifc:IfcCartesianPoint_List .
+
+inst:IfcPolyline_156  ifc:points_IfcPolyline  inst:IfcCartesianPoint_List_281 .
+
+inst:IfcCartesianPoint_List_282
+        rdf:type  ifc:IfcCartesianPoint_List .
+
+inst:IfcCartesianPoint_List_283
+        rdf:type  ifc:IfcCartesianPoint_List .
+
+inst:IfcCartesianPoint_List_284
+        rdf:type  ifc:IfcCartesianPoint_List .
+
+inst:IfcCartesianPoint_List_285
+        rdf:type  ifc:IfcCartesianPoint_List .
+
+inst:IfcCartesianPoint_151
+        rdf:type  ifc:IfcCartesianPoint .
+
+inst:IfcCartesianPoint_List_281
+        list:hasContents  inst:IfcCartesianPoint_151 ;
+        list:hasNext      inst:IfcCartesianPoint_List_282 .
+
+inst:IfcCartesianPoint_152
+        rdf:type  ifc:IfcCartesianPoint .
+
+inst:IfcCartesianPoint_List_282
+        list:hasContents  inst:IfcCartesianPoint_152 ;
+        list:hasNext      inst:IfcCartesianPoint_List_283 .
+
+inst:IfcCartesianPoint_153
+        rdf:type  ifc:IfcCartesianPoint .
+
+inst:IfcCartesianPoint_List_283
+        list:hasContents  inst:IfcCartesianPoint_153 ;
+        list:hasNext      inst:IfcCartesianPoint_List_284 .
+
+inst:IfcCartesianPoint_154
+        rdf:type  ifc:IfcCartesianPoint .
+
+inst:IfcCartesianPoint_List_284
+        list:hasContents  inst:IfcCartesianPoint_154 ;
+        list:hasNext      inst:IfcCartesianPoint_List_285 .
+
+inst:IfcCartesianPoint_155
+        rdf:type  ifc:IfcCartesianPoint .
+
+inst:IfcCartesianPoint_List_285
+        list:hasContents  inst:IfcCartesianPoint_155 .
+
+inst:IfcArbitraryClosedProfileDef_157
+        rdf:type                       ifc:IfcArbitraryClosedProfileDef ;
+        ifc:profileType_IfcProfileDef  ifc:AREA ;
+        ifc:outerCurve_IfcArbitraryClosedProfileDef  inst:IfcPolyline_156 .
+
+inst:IfcDirection_161
+        rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_286  rdf:type  express:REAL_List .
+
+inst:IfcDirection_161
+        ifc:directionRatios_IfcDirection  inst:REAL_List_286 .
+
+inst:REAL_List_287  rdf:type  express:REAL_List .
+
+inst:REAL_List_288  rdf:type  express:REAL_List .
+
+inst:REAL_List_286  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_287 .
+
+inst:REAL_List_287  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_288 .
+
+inst:REAL_List_288  list:hasContents  inst:REAL_170 .
+
+inst:IfcDirection_162
+        rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_289  rdf:type  express:REAL_List .
+
+inst:IfcDirection_162
+        ifc:directionRatios_IfcDirection  inst:REAL_List_289 .
+
+inst:REAL_List_290  rdf:type  express:REAL_List .
+
+inst:REAL_List_291  rdf:type  express:REAL_List .
+
+inst:REAL_List_289  list:hasContents  inst:REAL_170 ;
+        list:hasNext      inst:REAL_List_290 .
+
+inst:REAL_List_290  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_291 .
+
+inst:REAL_List_291  list:hasContents  inst:REAL_171 .
+
+inst:IfcDirection_163
+        rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_292  rdf:type  express:REAL_List .
+
+inst:IfcDirection_163
+        ifc:directionRatios_IfcDirection  inst:REAL_List_292 .
+
+inst:REAL_List_293  rdf:type  express:REAL_List .
+
+inst:REAL_List_294  rdf:type  express:REAL_List .
+
+inst:REAL_List_292  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_293 .
+
+inst:REAL_List_293  list:hasContents  inst:REAL_170 ;
+        list:hasNext      inst:REAL_List_294 .
+
+inst:REAL_List_294  list:hasContents  inst:REAL_171 .
+
+inst:IfcAxis2Placement3D_164
+        rdf:type  ifc:IfcAxis2Placement3D .
+
+inst:IfcCartesianPoint_159
+        rdf:type  ifc:IfcCartesianPoint .
+
+inst:IfcAxis2Placement3D_164
+        ifc:location_IfcPlacement     inst:IfcCartesianPoint_159 ;
+        ifc:axis_IfcAxis2Placement3D  inst:IfcDirection_161 ;
+        ifc:refDirection_IfcAxis2Placement3D  inst:IfcDirection_162 .
+
+inst:IfcLocalPlacement_165
+        rdf:type  ifc:IfcLocalPlacement .
+
+inst:IfcCartesianPoint_158
+        rdf:type  ifc:IfcCartesianPoint .
+
+inst:IfcLocalPlacement_165
+        ifc:placementRelTo_IfcLocalPlacement  inst:IfcCartesianPoint_158 ;
+        ifc:relativePlacement_IfcLocalPlacement  inst:IfcAxis2Placement3D_164 .
+
+inst:IfcDirection_166
+        rdf:type  ifc:IfcDirection .
+
+inst:REAL_List_295  rdf:type  express:REAL_List .
+
+inst:IfcDirection_166
+        ifc:directionRatios_IfcDirection  inst:REAL_List_295 .
+
+inst:REAL_List_296  rdf:type  express:REAL_List .
+
+inst:REAL_List_297  rdf:type  express:REAL_List .
+
+inst:REAL_List_295  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_296 .
+
+inst:REAL_List_296  list:hasContents  inst:REAL_171 ;
+        list:hasNext      inst:REAL_List_297 .
+
+inst:REAL_List_297  list:hasContents  inst:REAL_170 .
+
+inst:IfcBuildingElementProxy_168
+        rdf:type  ifc:IfcBuildingElementProxy .
+
+inst:IfcGloballyUniqueId_298
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "1$qUSa1uT3wA$IwlGh$ynl" .
+
+inst:IfcBuildingElementProxy_168
+        ifc:globalId_IfcRoot  inst:IfcGloballyUniqueId_298 .
+
+inst:IfcLabel_299  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Panel" .
+
+inst:IfcBuildingElementProxy_168
+        ifc:name_IfcRoot                inst:IfcLabel_299 ;
+        ifc:objectPlacement_IfcProduct  inst:IfcLocalPlacement_165 .
+
+inst:IfcProductDefinitionShape_170
+        rdf:type  ifc:IfcProductDefinitionShape .
+
+inst:IfcBuildingElementProxy_168
+        ifc:representation_IfcProduct  inst:IfcProductDefinitionShape_170 .
+
+inst:IfcRepresentation_List_300
+        rdf:type  ifc:IfcRepresentation_List .
+
+inst:IfcProductDefinitionShape_170
+        ifc:representations_IfcProductRepresentation  inst:IfcRepresentation_List_300 .
+
+inst:IfcShapeRepresentation_169
+        rdf:type  ifc:IfcShapeRepresentation .
+
+inst:IfcRepresentation_List_300
+        list:hasContents  inst:IfcShapeRepresentation_169 .

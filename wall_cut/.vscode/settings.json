@@ -1,0 +1,29 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/ubuntu/ros2/install/slicer/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/install/robot2/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/install/py_pubsub/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/build/launch_testing_examples",
+        "/home/ubuntu/ros2/install/launch_testing_examples/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/build/examples_rclpy_pointcloud_publisher",
+        "/home/ubuntu/ros2/install/examples_rclpy_pointcloud_publisher/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/build/examples_rclpy_minimal_subscriber",
+        "/home/ubuntu/ros2/install/examples_rclpy_minimal_subscriber/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/build/examples_rclpy_minimal_service",
+        "/home/ubuntu/ros2/install/examples_rclpy_minimal_service/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/build/examples_rclpy_minimal_publisher",
+        "/home/ubuntu/ros2/install/examples_rclpy_minimal_publisher/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/build/examples_rclpy_minimal_client",
+        "/home/ubuntu/ros2/install/examples_rclpy_minimal_client/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/build/examples_rclpy_minimal_action_server",
+        "/home/ubuntu/ros2/install/examples_rclpy_minimal_action_server/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/build/examples_rclpy_minimal_action_client",
+        "/home/ubuntu/ros2/install/examples_rclpy_minimal_action_client/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/build/examples_rclpy_guard_conditions",
+        "/home/ubuntu/ros2/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages",
+        "/home/ubuntu/ros2/build/examples_rclpy_executors",
+        "/home/ubuntu/ros2/install/examples_rclpy_executors/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

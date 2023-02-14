@@ -1,0 +1,107 @@
+@prefix bot:   <https://w3id.org/bot#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix ifc:   <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#> .
+@prefix inst:  <http://w3id.org/ioc#> .
+@prefix lbd:   <https://linkebuildingdata.org/LBD#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix smls:  <https://w3id.org/def/smls-owl#> .
+@prefix unit:  <http://qudt.org/vocab/unit/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+inst:buildingelement_22411a33-de3b-4258-82f1-b016b207fe89
+        rdf:type               bot:Element ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_22411a33-de3b-4258-82f1-b016b207fe89 ;
+        props:nameIfcRoot      inst:nameIfcRoot_22411a33-de3b-4258-82f1-b016b207fe89 ;
+        geo:hasGeometry        []  ;
+        owl:sameAs             inst:IfcBuildingElementProxy_168 .
+
+inst:building_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2
+        rdf:type               bot:Building ;
+        props:globalIdIfcRoot  inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2 ;
+        geo:hasGeometry        []  ;
+        owl:sameAs             inst:IfcBuilding_101 .
+
+inst:site_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+        rdf:type                   bot:Site ;
+        props:globalIdIfcRoot      inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        props:nameIfcRoot          inst:nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        props:refElevationIfcSite  inst:refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1 ;
+        geo:hasGeometry            []  ;
+        owl:sameAs                 inst:IfcSite_107 ;
+        bot:hasBuilding            inst:building_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2 .
+
+<Optional[http://w3id.org/ioc#]property> {
+    inst:refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394405521 .
+    
+    inst:state_refElevationIfcSite_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394405521
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "0."^^xsd:double ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:45.527178" .
+    
+    inst:state_nameIfcRoot_22411a33-de3b-4258-82f1-b016b207fe89_1676394405545
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "Panel" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:45.545074" .
+    
+    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2_1676394405535
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "3Sk_9SPbf3uhLES_BTzlEY" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:45.535082" .
+    
+    inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394405530 .
+    
+    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394405530
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "3Sk_9SPbf3uhLES_BTzlEX" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:45.530027" .
+    
+    inst:globalIdIfcRoot_22411a33-de3b-4258-82f1-b016b207fe89
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_globalIdIfcRoot_22411a33-de3b-4258-82f1-b016b207fe89_1676394405545 .
+    
+    inst:nameIfcRoot_22411a33-de3b-4258-82f1-b016b207fe89
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_nameIfcRoot_22411a33-de3b-4258-82f1-b016b207fe89_1676394405545 .
+    
+    inst:globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_globalIdIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a2_1676394405535 .
+    
+    inst:state_globalIdIfcRoot_22411a33-de3b-4258-82f1-b016b207fe89_1676394405545
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "0YGHeptZj2M8Bni1Qo1$w9" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:45.545315" .
+    
+    inst:nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1
+            rdf:type  <https://w3id.org/opm#Property> ;
+            <https://w3id.org/opm#hasPropertyState>
+                    inst:state_nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394405529 .
+    
+    inst:state_nameIfcRoot_dcbbe25c-665a-43e2-b54e-73e2ddf6f3a1_1676394405529
+            rdf:type                   <https://w3id.org/opm#CurrentPropertyState> ;
+            <http://schema.org/value>  "Default" ;
+            <http://www.w3.org/ns/prov#generatedAtTime>
+                    "2023-02-14T18:06:45.529796" .
+}
+
+<Optional[http://w3id.org/ioc#]product> {
+    inst:buildingelement_22411a33-de3b-4258-82f1-b016b207fe89
+            rdf:type  <https://pi.pauwel.be/voc/buildingelement#BuildingElement> .
+}
