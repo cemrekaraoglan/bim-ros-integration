@@ -3,12 +3,13 @@ import numpy              as np
 import rclpy
 from rclpy.node           import Node
 #import tf_transformations as tf_trans
-
+from ament_index_python.packages import get_package_share_path
 from tf2_ros              import TransformBroadcaster, TransformStamped
 from geometry_msgs.msg    import Vector3, Quaternion
 from std_msgs.msg import String, Float32
 from rclpy.timer import Timer
 import time
+import os
 
 class RobotModel(Node):
 
@@ -20,7 +21,6 @@ class RobotModel(Node):
         self.joystick_sub = self.create_subscription(Joy, 'joy', self.get_JoystickInput, 10) #?
         self.fab_pub = self.create_publisher(String, '/fabrication_status/message', 10)
         self.fab_pub_dim = self.create_publisher(Float32, '/fabrication_status/dimension', 10)
-        
 
         #home position
         self.x = 0.0
@@ -33,7 +33,6 @@ class RobotModel(Node):
         self.jointstate = JointState()
         self.jointstate.name = ["base_link1_joint", "link1_link2_joint", "link2_link3_joint"]
         self.get_logger().info(f"slicer is on...")
-
 
         #add yaml file to config folder and add the details in the  main, setup and launch files to read the parameters
         self.declare_parameter('max_speed', 0.0) 
@@ -67,9 +66,23 @@ class RobotModel(Node):
         
         self.fab_pub_msg.data = 'The cutting has not started yet'
         self.fab_pub.publish(self.fab_pub_msg)
-        
+    
         self.get_logger().info(f"The cutting has not started yet")
+
+        #dimensions to pull
+        '''package_path = get_package_share_path('slicer')
+        dim_path = os.path.join(package_path, 'data/output.txt')
+
+        with open(dim_path, "r") as f:
+            cut_dimension = f.readline().strip()
+            self.joint_goal.data = float(cut_dimension)
+
+        # Delete the first line from the file
+        with open(dim_path, "r") as f:
+            lines = f.readlines()[1:]
         
+        with open(dim_path, "w") as f:
+            f.writelines(lines)'''      
         
     def get_JoystickInput(self, msg):
 
@@ -174,5 +187,3 @@ def main(args=None):
     
 if __name__ == "__main__":
     main()
-    
-    

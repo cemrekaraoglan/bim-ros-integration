@@ -14,6 +14,7 @@ class Gypsum(Node):
         super().__init__(name)
 
         self.gypsum_pub = self.create_publisher(MarkerArray, 'visualization_marker_array', 10)
+        self.fab_pub = self.create_publisher(String, '/trigger', 10)
         self.sub_msg = self.create_subscription(String, "/fabrication_status/message", self.message_callback, 10)
         self.sub_dim = self.create_subscription(Float32, '/fabrication_status/dimension', self.dimension_callback, 10)
         
@@ -31,7 +32,7 @@ class Gypsum(Node):
         self.gypsum.scale.z = 0.01
         self.dim_x = self.gypsum.scale.x
         
-        self.gypsum.id = 0
+        self.gypsum.id = 100
         self.gypsum.ns = str(f'Gypsumboard {self.gypsum.id}')
 
         self.gypsum.pose.position.x = 0.12 + self.gypsum.scale.x/2
@@ -43,11 +44,11 @@ class Gypsum(Node):
         self.gypsum.pose.orientation.z = 0.0
         self.gypsum.pose.orientation.w = 1.0
 
-        self.gypsum.color.a = 1.0
+        self.gypsum.color.a = 0.8
         self.gypsum.color.r = random.uniform(0.0, 0.5)
         self.gypsum.color.g = random.uniform(0.0, 0.5)
         self.gypsum.color.b = 1.0 - (self.gypsum.color.r + self.gypsum.color.g)
-        
+        self.fab_pub_msg = String()
         self.msg_str = String()
         self.msg_dim = Float32()
 
@@ -67,7 +68,7 @@ class Gypsum(Node):
         if 'cutting has not started' in self.msg_str:
 
             if self.marker_added == False:
-                self.gypsum.id = 0
+                self.gypsum.id += 1
                 self.gypsum.action = Marker().ADD
                 self.array.markers.append(self.gypsum)
                 self.gypsum_pub.publish(self.array)
@@ -91,7 +92,7 @@ class Gypsum(Node):
 
                         if i == 0:
                             self.gypsum.id += 1
-                            self.gypsum.ns = str(f'Gypsumboard {self.gypsum.id}')
+                            self.gypsum.ns = str(f'Panel {self.gypsum.id}')
                             self.gypsum.color.r = random.uniform(0.0, 0.5)
                             self.gypsum.color.g = random.uniform(0.0, 0.5)
                             self.gypsum.color.b = 1.0 - (self.gypsum.color.r + self.gypsum.color.g)
@@ -105,7 +106,7 @@ class Gypsum(Node):
                         elif i == 1:
                             #piece 2
                             self.gypsum.id += 1
-                            self.gypsum.ns = str(f'Gypsumboard {self.gypsum.id}')
+                            self.gypsum.ns = str(f'Panel {self.gypsum.id}')
                             self.gypsum.color.a = 0.7
                             self.gypsum.color.r = random.uniform(0.0, 0.5)
                             self.gypsum.color.g = random.uniform(0.0, 0.5)
@@ -129,9 +130,9 @@ class Gypsum(Node):
 
                 if self.marker_added2 == True:
 
-                    for self.gypsum in self.array2.markers:
-                        self.gypsum.action = Marker().DELETE
-                        self.gypsum_pub.publish(self.array2)
+                    self.fab_pub_msg.data = 'Done'
+                    self.fab_pub.publish(self.fab_pub_msg)
+                    self.get_logger().info('Done')   
 
 
 def main(args=None):
@@ -147,5 +148,4 @@ def main(args=None):
     
 if __name__ == "__main__":
     main()
-    
-    
+

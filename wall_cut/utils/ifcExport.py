@@ -35,7 +35,9 @@ def export_ifc_as_proxy( import_dir, bottom_points, extrusion_height, corner, ex
 
     extruded_area_solid = file.createIfcExtrudedAreaSolid(SweptArea=closed_pline, Position=axis_placement, ExtrudedDirection=direction, Depth=Standard_Real(round(extrusion_height,2)))
 
-    building_element_proxy = file.createIfcBuildingElementProxy(GlobalId=ifcopenshell.guid.new(), Name='Panel', ObjectPlacement=local_placement)
+    GUID = ifcopenshell.guid.new()
+    
+    building_element_proxy = file.createIfcBuildingElementProxy(GlobalId=GUID, Name='Panel', ObjectPlacement=local_placement)
 
     reps = file.createIfcShapeRepresentation(RepresentationIdentifier='Body', RepresentationType='SweptSolid', Items=[extruded_area_solid])
 
@@ -47,4 +49,5 @@ def export_ifc_as_proxy( import_dir, bottom_points, extrusion_height, corner, ex
             
     # Save the file
     file.write(export_dir)
-            
+    
+    return GUID
