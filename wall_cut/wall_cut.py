@@ -142,6 +142,7 @@ def get_shapes(model):
                 # ---------------------------------------------------
 
 
+
                 # ---------------------------------------------------   
                 # forming the vertical cutting objects for the boolean operation in the next step
 
@@ -325,7 +326,7 @@ def create_ifcobject(extrusion_heights, plines, corners):
 
     for i, pline in enumerate(plines):
 
-        IFC2OWL.convert_2_OWL(export_dir, output_filename[i])
+        #IFC2OWL.convert_2_OWL(export_dir, output_filename[i])
 
         print(f'IFC file {i} out of {len(plines)} is converted to IFCOWL...')
 

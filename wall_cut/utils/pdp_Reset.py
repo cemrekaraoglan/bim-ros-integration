@@ -13,8 +13,8 @@ import re
 #Setup connection details
 conn_details = {
   'endpoint': 'https://server.ip.rwth-aachen.de/ioc/stardog',
-  'username': 'PDP_USER_DEBUG',
-  'password': 'PDPDEBUG'
+  'username': '******',
+  'password': '******'
 }
 
 # read the contents of the file "PDP_TS_01.ttl"

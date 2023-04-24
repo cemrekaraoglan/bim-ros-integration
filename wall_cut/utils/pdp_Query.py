@@ -10,8 +10,8 @@ from rdflib import Graph, URIRef, Namespace
 #Setup connection details
 conn_details = {
   'endpoint': 'https://server.ip.rwth-aachen.de/ioc/stardog',
-  'username': 'PDP_USER_DEBUG',
-  'password': 'PDPDEBUG'
+  'username': '******',
+  'password': '******'
 }
 
 #For every Converted IFC that you have as .ttl file, this needs to be done:

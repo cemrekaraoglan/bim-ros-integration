@@ -73,7 +73,8 @@ def generate_launch_description():
     ld.add_action(robot_state_node)
     ld.add_action(rviz_arg)
     ld.add_action(rviz_node)
-    ld.add_action(joy_node)
     ld.add_action(visualization_node)
+    ld.add_action(joy_node)
+    
 
     return ld

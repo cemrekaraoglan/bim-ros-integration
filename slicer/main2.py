@@ -65,6 +65,8 @@ class Gypsum(Node):
 
         self.msg_str = msg.data
 
+        time.sleep(0.1)
+
         if 'cutting has not started' in self.msg_str:
 
             if self.marker_added == False:
@@ -79,6 +81,8 @@ class Gypsum(Node):
                 time.sleep(0.05)
 
         if 'is cut' in self.msg_str:
+
+            time.sleep(0.05)
 
             if self.marker_added == True:
 
@@ -102,6 +106,7 @@ class Gypsum(Node):
                             self.array2.markers.append(self.gypsum)
                             self.gypsum_pub.publish(self.array2)
                             self.get_logger().info(f'{self.gypsum.id}')
+                            
                        
                         elif i == 1:
                             #piece 2
@@ -122,7 +127,7 @@ class Gypsum(Node):
 
                     
 
-        if 'home position' in self.msg_str:
+'''        if 'home position' in self.msg_str:
 
             time.sleep(0.5)
 
@@ -132,7 +137,7 @@ class Gypsum(Node):
 
                     self.fab_pub_msg.data = 'Done'
                     self.fab_pub.publish(self.fab_pub_msg)
-                    self.get_logger().info('Done')   
+                    self.get_logger().info('Done')   '''
 
 
 def main(args=None):

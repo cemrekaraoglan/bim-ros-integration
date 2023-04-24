@@ -26,7 +26,6 @@ Go to your <your_ros_ws> and run this commands to ros2 environment acknowledge y
 
 ```
 cd ~/<your_ros_ws>
-catkin_make
 ```
 
 # How To Start
@@ -52,10 +51,7 @@ run the code
 
 ```
 ./pkg_launch.sh
-```
-to run joystick, joy node will be used to start process
-```
-ros2 run joy joy_node
+
 ```
 to configure joystick 
 ```
