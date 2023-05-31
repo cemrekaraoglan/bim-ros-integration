@@ -115,7 +115,8 @@ SELECT ?Opening ?OpeningGeo ?Wall ?WallGeo
 
 ### 2 - Linking the Fabrication Status
 
-To be able to link fabrication status to IFCOwl model,at the beginning the project, parent "Process" class  inserted with SPARQL linked to related IfcWall and push to the server. "Process" class is Internet of Construction Onthology [IOC] (https://ip.pages.rwth-aachen.de/ioc/core/). 
+To be able to link fabrication status to IFCOwl model,at the beginning the project, parent "Process" class  inserted with SPARQL linked to related IfcWall and push to the server. "Process" class is Internet of Construction Onthology [IOC] (https://ip.pages.rwth-aachen.de/ioc/core/). Special thanks to Lukas Kirner from Individualized Production chair at RWTH Aachen University.
+
 
 Insert Process:
 ```
